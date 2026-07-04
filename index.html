@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUP | Premium UGC & Social Media Marketing Agency in India</title>
+  <meta name="description" content="Scale your brand with India's Top UGC & Social Media Marketing agency. Psychology-driven content, 3000+ creators, proven results.">
+  <meta name="keywords" content="UGC marketing, social media marketing, D2C brands India, content creators, Meta ads, Instagram marketing">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Progress Bar -->
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <header class="nav-header" id="navHeader">
+    <nav class="nav-inner">
+      <a href="#" class="nav-logo" id="navLogo">
+        <span class="logo-mark">●</span>
+        <span class="logo-text">SUP</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li class="has-dropdown">
+          <span class="nav-link">Services</span>
+          <div class="dropdown-panel">
+            <a href="#services">Personal Branding</a>
+            <a href="#services">Short Form UGC</a>
+            <a href="#services">Paid Media</a>
+            <a href="#services">Social Management</a>
+          </div>
+        </li>
+        <li><a href="#portfolio" class="nav-link">Case Studies</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta" id="navCta">
+        <span>Contact Us</span>
+        <div class="cta-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#hero" class="mob-link">Home</a>
+      <a href="#services" class="mob-link">Services</a>
+      <a href="#portfolio" class="mob-link">Case Studies</a>
+      <a href="#about" class="mob-link">About Us</a>
+      <a href="#faq" class="mob-link">FAQ</a>
+      <a href="#contact" class="mob-link mob-cta">Contact Us →</a>
+    </div>
+  </div>
+
+  <!-- Vertical Dashed Grid -->
+  <div class="grid-overlay" aria-hidden="true">
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+  </div>
+
+  <!-- ======================================================
+       HERO SECTION
+  ====================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <!-- LEFT CARDS COLUMN -->
+      <div class="hero-cards-left">
+        <!-- Card 1: UGC Video (9:16) -->
+        <div class="pcard pcard-1 tilt-left">
+          <div class="pcard-media video-aspect">
+            <div class="video-mock">
+              <div class="video-play">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+              </div>
+              <div class="video-bars">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="video-badge">UGC AD</div>
+              <div class="video-mute">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tl">
+            <svg width="24" height="24" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
+          </div>
+        </div>
+
+        <!-- Card 2: Square Image -->
+        <div class="pcard pcard-2 tilt-left">
+          <div class="pcard-media square-aspect">
+            <div class="img-mock gradient-1">
+              <div class="creator-stack">
+                <div class="creator-ring r1"></div>
+                <div class="creator-ring r2"></div>
+                <div class="creator-ring r3"></div>
+                <span class="creator-count-badge">3,000+<br>Creators</span>
+              </div>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tl">
+            <svg width="20" height="20" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- CENTER CONTENT -->
+      <div class="hero-center">
+        <!-- Experts In Row -->
+        <div class="experts-row fade-in">
+          <span class="experts-label">Experts in</span>
+          <div class="experts-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/512px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" class="expert-logo" onerror="this.style.display='none'">
+            <span class="expert-text">Meta</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png" alt="Instagram" class="expert-logo" onerror="this.style.display='none'">
+            <span class="expert-text">Instagram</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/512px-LinkedIn_Logo.svg.png" alt="LinkedIn" class="expert-logo" onerror="this.style.display='none'">
+            <span class="expert-text">LinkedIn</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/159px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" class="expert-logo" onerror="this.style.display='none'">
+            <span class="expert-text">YouTube</span>
+          </div>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="hero-headline fade-in delay-1">
+          Don't just
+          <div class="headline-row">
+            <span>Get</span>
+          </div>
+          <div class="headline-row-avatars">
+            <span class="headline-word">Viewed</span>
+            <div class="inline-avatars">
+              <div class="iavatar ia1"></div>
+              <div class="iavatar ia2"></div>
+              <div class="iavatar ia3"></div>
+            </div>
+          </div>
+        </h1>
+
+        <p class="hero-sub fade-in delay-2">
+          India's leading UGC & Social Media Performance Engine.<br>
+          We replace guesswork with psychology — scaling D2C brands past records.
+        </p>
+
+        <div class="hero-btns fade-in delay-3">
+          <a href="#contact" class="btn-primary">
+            <span>Let's Talk</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#portfolio" class="btn-ghost">View Our Work</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-hint fade-in delay-4">
+          <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+          <span>Scroll down</span>
+        </div>
+      </div>
+
+      <!-- RIGHT CARDS COLUMN -->
+      <div class="hero-cards-right">
+        <!-- Card 3: Analytics -->
+        <div class="pcard pcard-3 tilt-right">
+          <div class="pcard-media square-aspect">
+            <div class="img-mock gradient-2">
+              <div class="analytics-widget">
+                <div class="aw-label">Engagement Rate</div>
+                <div class="aw-value">18%</div>
+                <div class="aw-bars">
+                  <span style="height:35%"></span>
+                  <span style="height:55%"></span>
+                  <span style="height:80%"></span>
+                  <span style="height:60%"></span>
+                  <span style="height:95%" class="bar-accent"></span>
+                </div>
+                <div class="aw-change">↑ +14% vs industry</div>
+              </div>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tr">
+            <svg width="20" height="20" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
+          </div>
+        </div>
+
+        <!-- Card 4: Brand -->
+        <div class="pcard pcard-4 tilt-right">
+          <div class="pcard-media square-aspect">
+            <div class="img-mock gradient-3">
+              <div class="views-widget">
+                <div class="vw-label">Organic Views</div>
+                <div class="vw-value">1.2B+</div>
+                <div class="vw-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#C7FF42" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tr">
+            <svg width="24" height="24" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================
+       WE BET — MYTHS SECTION
+  ====================================================== -->
+  <section class="myths-section" id="myths">
+    <div class="section-inner">
+
+      <div class="myths-grid">
+        <!-- Left: Section Label -->
+        <div class="myths-label-col reveal">
+          <span class="section-num">01</span>
+          <h2 class="myths-big-heading">We Bet!</h2>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="myths-content-col reveal">
+          <p class="myths-intro">We can bet that you still believe in the following three myths:-</p>
+
+          <ul class="myths-list">
+            <li class="myth-item">
+              <span class="myth-cross">✕</span>
+              <span>Your product speaks for itself.</span>
+            </li>
+            <li class="myth-item">
+              <span class="myth-cross">✕</span>
+              <span>Studio-shot, polished ads perform better.</span>
+            </li>
+            <li class="myth-item">
+              <span class="myth-cross">✕</span>
+              <span>Virality comes with sheer luck.</span>
+            </li>
+          </ul>
+
+          <p class="myths-closer">We replace the guesswork with psychology. Ready to grow?</p>
+
+          <a href="#contact" class="btn-ghost mt-6">Let's Talk</a>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-block reveal">
+          <div class="stat-num" data-target="100" data-suffix="+">0+</div>
+          <div class="stat-divider"></div>
+          <div class="stat-name">Brands Grown</div>
+          <p class="stat-desc">We've helped scale 100+ brands across borders with custom systems.</p>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-num" data-target="1.2" data-suffix="B+">0B+</div>
+          <div class="stat-divider"></div>
+          <div class="stat-name">Organic Views</div>
+          <p class="stat-desc">Over a billion views generated via custom psychology-driven content.</p>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-num" data-target="800" data-suffix="+">0+</div>
+          <div class="stat-divider"></div>
+          <div class="stat-name">UGC Delivered</div>
+          <p class="stat-desc">High-converting creator videos engineered end-to-end.</p>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-num" data-target="3" data-suffix="K+">0K+</div>
+          <div class="stat-divider"></div>
+          <div class="stat-name">Active Creators</div>
+          <p class="stat-desc">Roster of 3000+ top-notch creators spanning all niches.</p>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-num" data-target="18" data-suffix="%">0%</div>
+          <div class="stat-divider"></div>
+          <div class="stat-name">Engagement Rate</div>
+          <p class="stat-desc">Achieved 18% engagement against the 2% industry baseline.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================
+       BRAND MARQUEE
+  ====================================================== -->
+  <section class="marquee-section">
+    <!-- Row 1 → -->
+    <div class="marquee-track-wrap fade-edge">
+      <div class="marquee-track marquee-ltr">
+        <div class="marquee-set">
+          <span class="mbrand">OZiva</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">GIVA</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Bioderma</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Carbamide Forte</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Too Yumm!</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Surya Roshni</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+        </div>
+        <div class="marquee-set" aria-hidden="true">
+          <span class="mbrand">OZiva</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">GIVA</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Bioderma</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Carbamide Forte</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Too Yumm!</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Surya Roshni</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 ← -->
+    <div class="marquee-track-wrap fade-edge mt-4">
+      <div class="marquee-track marquee-rtl">
+        <div class="marquee-set">
+          <span class="mbrand">Elevate Now</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Voyara</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Skysh</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Exploria</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Yasha Couture</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+        </div>
+        <div class="marquee-set" aria-hidden="true">
+          <span class="mbrand">Elevate Now</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Voyara</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Skysh</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Exploria</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+          <span class="mbrand">Yasha Couture</span>
+          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SERVICES SECTION
+  ====================================================== -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-tag">02 SERVICES</span>
+        <h2 class="section-h2">Our Crucible<br>of Growth</h2>
+        <p class="section-sub">We design magnetic creator visual flywheels, custom identity systems, and optimize digital ad acquisition.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="svc-card reveal">
+          <div class="svc-inner">
+            <div class="svc-front">
+              <span class="svc-tag">REVENUE DRIVER</span>
+              <h3 class="svc-name">Personal<br>Branding</h3>
+              <div class="svc-plus">+</div>
+            </div>
+            <div class="svc-back">
+              <p>Build a magnetic online identity that sets you apart and attracts your ideal high-intent audience. End-to-end copywriting and strategy.</p>
+              <a href="#contact" class="svc-link">Let's talk →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="svc-card reveal">
+          <div class="svc-inner">
+            <div class="svc-front">
+              <span class="svc-tag">ACQUISITION ENGINE</span>
+              <h3 class="svc-name">Short Form<br>UGC Content</h3>
+              <div class="svc-plus">+</div>
+            </div>
+            <div class="svc-back">
+              <p>We deploy 3,000+ creators to shoot high-performing, raw, ad-ready video creatives styled with psychological visual hooks.</p>
+              <a href="#contact" class="svc-link">Let's talk →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="svc-card reveal">
+          <div class="svc-inner">
+            <div class="svc-front">
+              <span class="svc-tag">PERFORMANCE CORE</span>
+              <h3 class="svc-name">Paid Media<br>Advertising</h3>
+              <div class="svc-plus">+</div>
+            </div>
+            <div class="svc-back">
+              <p>Deploy micro-targeted paid campaigns on Meta, Google, and YouTube with custom attribution pipelines for accelerated return.</p>
+              <a href="#contact" class="svc-link">Let's talk →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="svc-card reveal">
+          <div class="svc-inner">
+            <div class="svc-front">
+              <span class="svc-tag">AESTHETIC GRID</span>
+              <h3 class="svc-name">Social Media<br>Management</h3>
+              <div class="svc-plus">+</div>
+            </div>
+            <div class="svc-back">
+              <p>Transition your grid from a static portfolio to a living, storytelling brand that users naturally fall in love with.</p>
+              <a href="#contact" class="svc-link">Let's talk →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CASE STUDIES SLIDER
+  ====================================================== -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-tag">03 PORTFOLIO</span>
+        <h2 class="section-h2">The Proof<br>of Progress.</h2>
+      </div>
+
+      <div class="cs-wrapper">
+        <!-- Slide 1 -->
+        <div class="cs-slide active" id="csSlide1">
+          <div class="cs-left">
+            <div class="cs-type-row">
+              <p class="cs-stroke-text">UGC</p>
+              <span class="cs-badge">UGC & INFLUENCER</span>
+            </div>
+            <h3 class="cs-brand">Surya Roshni</h3>
+            <p class="cs-desc">We partnered with India's legacy lighting brand to build social proof and expand presence through home-environment creator content.</p>
+            <div class="cs-stats">
+              <div class="cs-stat">
+                <span class="cs-stat-num">100+</span>
+                <span class="cs-stat-label">Creators Matched</span>
+              </div>
+              <div class="cs-stat">
+                <span class="cs-stat-num">800K+</span>
+                <span class="cs-stat-label">Organic Views</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
+          </div>
+          <div class="cs-right">
+            <div class="cs-visual">
+              <div class="cs-visual-inner gradient-cs1">
+                <div class="cs-visual-tag">Lighting Range</div>
+                <div class="cs-visual-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26A7 7 0 0112 2zM9 21h6M10 17h4"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="cs-slide" id="csSlide2">
+          <div class="cs-left">
+            <div class="cs-type-row">
+              <p class="cs-stroke-text">UGC</p>
+              <span class="cs-badge">CREATOR ACQUISITION</span>
+            </div>
+            <h3 class="cs-brand">Too Yumm!</h3>
+            <p class="cs-desc">Psychology-driven short-form reels for FMCG brand Too Yumm!, driving massive views and landing high conversion metrics across platforms.</p>
+            <div class="cs-stats">
+              <div class="cs-stat">
+                <span class="cs-stat-num">50+</span>
+                <span class="cs-stat-label">Unique Reels</span>
+              </div>
+              <div class="cs-stat">
+                <span class="cs-stat-num">+310%</span>
+                <span class="cs-stat-label">Reach Hike</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
+          </div>
+          <div class="cs-right">
+            <div class="cs-visual">
+              <div class="cs-visual-inner gradient-cs2">
+                <div class="cs-visual-tag">FMCG / Snack Brand</div>
+                <div class="cs-visual-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="cs-slide" id="csSlide3">
+          <div class="cs-left">
+            <div class="cs-type-row">
+              <p class="cs-stroke-text">SMM</p>
+              <span class="cs-badge">ORGANIC GRID WORK</span>
+            </div>
+            <h3 class="cs-brand">GIVA</h3>
+            <p class="cs-desc">We revamped the digital aesthetic of GIVA Jewellery, transforming their Instagram profile into a luxurious curated lookbook.</p>
+            <div class="cs-stats">
+              <div class="cs-stat">
+                <span class="cs-stat-num">120K+</span>
+                <span class="cs-stat-label">Followers Gained</span>
+              </div>
+              <div class="cs-stat">
+                <span class="cs-stat-num">5.4x</span>
+                <span class="cs-stat-label">ROAS Lift</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
+          </div>
+          <div class="cs-right">
+            <div class="cs-visual">
+              <div class="cs-visual-inner gradient-cs3">
+                <div class="cs-visual-tag">Jewellery Brand</div>
+                <div class="cs-visual-icon">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="cs-nav">
+          <button class="cs-arrow" id="csPrev" aria-label="Previous">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="cs-dots">
+            <button class="cs-dot active" data-slide="0"></button>
+            <button class="cs-dot" data-slide="1"></button>
+            <button class="cs-dot" data-slide="2"></button>
+          </div>
+          <button class="cs-arrow" id="csNext" aria-label="Next">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       TESTIMONIALS
+  ====================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-tag">04 TESTIMONIALS</span>
+        <h2 class="section-h2">What Brands<br>Say About Us</h2>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Working with this agency was a turning point for our brand. Their UGC campaigns delivered a 3x increase in engagement within the first month. The creators truly understood our aesthetic."</p>
+          <div class="testi-author">
+            <div class="testi-avatar av-green">SK</div>
+            <div class="testi-info">
+              <span class="testi-name">Sneha Kapoor</span>
+              <span class="testi-role">Founder, OZiva</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Their short-form reels went viral with our exact target audience. Our organic reach grew by 310% in 6 weeks. Absolute professionals who understand D2C deeply."</p>
+          <div class="testi-author">
+            <div class="testi-avatar av-orange">AR</div>
+            <div class="testi-info">
+              <span class="testi-name">Arjun Reddy</span>
+              <span class="testi-role">Marketing Head, Too Yumm!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Our Instagram transformed from a basic product feed to a luxury lookbook in 60 days. The aesthetic shift showed directly in our ROAS climbing to 5.4x. Highly recommended."</p>
+          <div class="testi-author">
+            <div class="testi-avatar av-purple">PM</div>
+            <div class="testi-info">
+              <span class="testi-name">Priya Mehta</span>
+              <span class="testi-role">CMO, GIVA Jewellery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       ABOUT / PROCESS
+  ====================================================== -->
+  <section class="about-section" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <span class="section-tag">05 PROCESS</span>
+          <h2 class="section-h2">From Brief<br>to <span class="text-green">Viral.</span></h2>
+          <p class="about-desc">A battle-tested 4-step engine that takes your brand from obscurity to omnipresence in 90 days or less.</p>
+          <a href="#contact" class="btn-primary mt-8">Start Your Growth</a>
+        </div>
+        <div class="about-right">
+          <div class="process-step-card reveal">
+            <div class="ps-num">01</div>
+            <div class="ps-content">
+              <h4>Discovery & Brand Audit</h4>
+              <p>We dissect your brand's identity, competitors, and current social presence to define exactly where you need to go.</p>
+            </div>
+          </div>
+          <div class="process-step-card reveal">
+            <div class="ps-num">02</div>
+            <div class="ps-content">
+              <h4>Strategy & Creator Briefing</h4>
+              <p>We map a full content calendar, identify psychological hooks, and select creators from our 3,000+ roster with precision.</p>
+            </div>
+          </div>
+          <div class="process-step-card reveal">
+            <div class="ps-num">03</div>
+            <div class="ps-content">
+              <h4>Content Production & QC</h4>
+              <p>Every asset is reviewed for hook strength, visual clarity, and platform formatting before a single frame goes live.</p>
+            </div>
+          </div>
+          <div class="process-step-card reveal">
+            <div class="ps-num">04</div>
+            <div class="ps-content">
+              <h4>Launch, Analyse & Scale</h4>
+              <p>We deploy content, A/B test creatives, and double down on what's working — creating a compounding growth flywheel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FAQ
+  ====================================================== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="faq-grid">
+        <div class="faq-left reveal">
+          <span class="section-tag">06 FAQ</span>
+          <h2 class="section-h2">Frequently<br>Asked.</h2>
+          <p class="faq-sub">Everything you want to know before we begin scaling your brand.</p>
+          <a href="#contact" class="btn-ghost mt-8">Ask Us Anything</a>
+        </div>
+
+        <div class="faq-right" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What makes you different from other agencies?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We specialize exclusively in UGC and social-first performance marketing for D2C brands. We're razor-focused on psychology-driven content, a 3,000+ verified creator roster, and data-backed optimization. Our average engagement rate of 18% vs the 2% industry standard speaks for itself.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How long before I start seeing results?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Most brands see measurable uplift in reach and engagement within the first 30 days. Significant revenue impact compounds from Month 2 onwards as we identify winning creatives and scale them.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What categories of brands do you work with?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We primarily work with Indian D2C brands across Health & Wellness, Beauty & Skincare, FMCG, Fashion, Jewellery, Food & Beverage, and EdTech.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Do you handle both organic and paid media?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes. We offer full-stack capability — from organic UGC and social media management to paid performance campaigns on Meta, Instagram, and YouTube.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How does creator selection work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We match creators based on your brand's niche, audience demographics, aesthetic requirements, and engagement quality — not just follower count. Every match is strategic.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What is the minimum engagement period?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We recommend a minimum 3-month engagement to allow the content flywheel to compound. We also offer project-based UGC bundles to experience our quality first.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CONTACT FORM
+  ====================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <!-- Left Info -->
+        <div class="contact-info reveal">
+          <span class="section-tag">07 LET'S GROW</span>
+          <h2 class="section-h2">Build the<br><span class="text-green">Next Era.</span></h2>
+          <p class="contact-sub">Fill out our brief, choose your scaling pillars, and secure an alignment slot within 24 hours.</p>
+
+          <div class="contact-detail">
+            <span class="cd-label">EMAIL US</span>
+            <a href="mailto:grow@sup.agency" class="cd-value">grow@sup.agency</a>
+          </div>
+          <div class="contact-detail">
+            <span class="cd-label">WHATSAPP</span>
+            <span class="cd-value">+91 98765 43210</span>
+          </div>
+          <div class="contact-detail">
+            <span class="cd-label">INSTAGRAM</span>
+            <a href="#" class="cd-value">@supmarketing.in</a>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="contact-form-wrap reveal">
+          <h3 class="form-title">Select Service Pillars</h3>
+          <div class="pillars-row" id="pillarsRow">
+            <button class="pillar-btn" data-svc="Personal Branding">Personal Branding</button>
+            <button class="pillar-btn" data-svc="Short Form UGC">Short Form UGC</button>
+            <button class="pillar-btn" data-svc="Paid Media">Paid Media Ads</button>
+            <button class="pillar-btn" data-svc="SMM">Social Management</button>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <input type="hidden" id="selectedServices" name="services">
+
+            <div class="field-group">
+              <input type="text" id="fname" name="name" required placeholder=" " class="field-input">
+              <label for="fname" class="field-label">Your Name *</label>
+            </div>
+            <div class="field-group">
+              <input type="email" id="femail" name="email" required placeholder=" " class="field-input">
+              <label for="femail" class="field-label">Email Address *</label>
+            </div>
+            <div class="field-group">
+              <input type="tel" id="fphone" name="phone" required placeholder=" " class="field-input">
+              <label for="fphone" class="field-label">WhatsApp Number *</label>
+            </div>
+            <div class="field-group">
+              <input type="text" id="fbrand" name="brand" placeholder=" " class="field-input">
+              <label for="fbrand" class="field-label">Brand Name</label>
+            </div>
+            <div class="field-group">
+              <input type="url" id="fwebsite" name="website" placeholder=" " class="field-input">
+              <label for="fwebsite" class="field-label">Website / Social Link</label>
+            </div>
+            <div class="field-group">
+              <textarea id="fdetails" name="details" placeholder=" " class="field-input field-textarea" rows="3"></textarea>
+              <label for="fdetails" class="field-label">Tell us about your brand</label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Submit Brief</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h4>Brief Received!</h4>
+            <p>We'll reach out within 24 hours to align on your growth strategy.</p>
+            <button class="btn-ghost" id="resetForm">Submit Another</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-giant">SUP</div>
+
+      <div class="footer-row">
+        <div class="footer-col">
+          <p class="footer-about">India's leading UGC & Social Media Performance agency. We replace guesswork with psychology.</p>
+          <div class="footer-socials">
+            <a href="#" class="fsocial">IG</a>
+            <a href="#" class="fsocial">LI</a>
+            <a href="#" class="fsocial">TW</a>
+            <a href="#" class="fsocial">YT</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Navigation</span>
+          <a href="#hero" class="footer-link">Home</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#portfolio" class="footer-link">Case Studies</a>
+          <a href="#about" class="footer-link">About Us</a>
+          <a href="#faq" class="footer-link">FAQ</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Services</span>
+          <a href="#services" class="footer-link">Personal Branding</a>
+          <a href="#services" class="footer-link">Short Form UGC</a>
+          <a href="#services" class="footer-link">Paid Media Ads</a>
+          <a href="#services" class="footer-link">Social Management</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Contact</span>
+          <a href="mailto:grow@sup.agency" class="footer-link">grow@sup.agency</a>
+          <a href="#" class="footer-link">+91 98765 43210</a>
+          <a href="#contact" class="footer-link footer-cta-link">Book a Call →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 SUP Marketing. All rights reserved.</span>
+        <span>Made with ♥ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
