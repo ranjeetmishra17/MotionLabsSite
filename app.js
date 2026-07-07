@@ -29,19 +29,33 @@ function initNav() {
   }, { passive: true });
 
   /* Hamburger */
+  const closeMenu = () => {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    /* Close on mobile link click */
-    mobileMenu.querySelectorAll('.mob-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+    /* Close button inside menu */
+    const mobClose = document.getElementById('mobClose');
+    if (mobClose) mobClose.addEventListener('click', closeMenu);
+
+    /* Close on any link or CTA click */
+    mobileMenu.querySelectorAll('.mob-link, .mob-cta').forEach(el => {
+      el.addEventListener('click', closeMenu);
+    });
+
+    /* Close on Escape key */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
