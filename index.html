@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUP | Premium UGC & Social Media Marketing Agency in India</title>
+  <title>Motion Labs</title>
   <meta name="description" content="Scale your brand with India's Top UGC & Social Media Marketing agency. Psychology-driven content, 3000+ creators, proven results.">
   <meta name="keywords" content="UGC marketing, social media marketing, D2C brands India, content creators, Meta ads, Instagram marketing">
   <link rel="icon" href="assets/logo.png" type="image/png">
@@ -13,13 +13,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
 
   <!-- Progress Bar -->
   <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
@@ -30,8 +27,7 @@
   <header class="nav-header" id="navHeader">
     <nav class="nav-inner">
       <a href="#" class="nav-logo" id="navLogo">
-        <span class="logo-mark">●</span>
-        <span class="logo-text">SUP</span>
+        <img src="assets/MotionLabs.png" alt="Motion Labs Logo" class="nav-logo-img">
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -41,11 +37,11 @@
           <div class="dropdown-panel">
             <a href="#services">Personal Branding</a>
             <a href="#services">Short Form UGC</a>
-            <a href="#services">Paid Media</a>
+            <a href="#services">Content Shoot</a>
             <a href="#services">Social Management</a>
+            <a href="#services">Video Editing</a>
           </div>
         </li>
-        <li><a href="#portfolio" class="nav-link">Case Studies</a></li>
         <li><a href="#about" class="nav-link">About Us</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
@@ -70,7 +66,6 @@
     <div class="mobile-menu-inner">
       <a href="#hero" class="mob-link">Home</a>
       <a href="#services" class="mob-link">Services</a>
-      <a href="#portfolio" class="mob-link">Case Studies</a>
       <a href="#about" class="mob-link">About Us</a>
       <a href="#faq" class="mob-link">FAQ</a>
       <a href="#contact" class="mob-link mob-cta">Contact Us →</a>
@@ -100,15 +95,16 @@
         <div class="pcard pcard-1 tilt-left">
           <div class="pcard-media video-aspect">
             <div class="video-mock">
-              <div class="video-play">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+              <video id="heroUgcVideo" class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_220,h_390/guy_woman_mobile.mp4"></video>
+              <div class="video-play" id="videoPlayBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" id="playIcon"><path d="M5 3l14 9-14 9V3z"/></svg>
               </div>
-              <div class="video-bars">
+              <div class="video-bars" id="videoBars">
                 <span></span><span></span><span></span><span></span><span></span><span></span>
               </div>
               <div class="video-badge">UGC AD</div>
-              <div class="video-mute">
-                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+              <div class="video-mute" id="videoMuteBtn">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" id="muteIcon">
                   <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
                 </svg>
               </div>
@@ -123,6 +119,7 @@
         <div class="pcard pcard-2 tilt-left">
           <div class="pcard-media square-aspect">
             <div class="img-mock gradient-1">
+              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/docs/walking_talking.mp4"></video>
               <div class="creator-stack">
                 <div class="creator-ring r1"></div>
                 <div class="creator-ring r2"></div>
@@ -139,20 +136,7 @@
 
       <!-- CENTER CONTENT -->
       <div class="hero-center">
-        <!-- Experts In Row -->
-        <div class="experts-row fade-in">
-          <span class="experts-label">Experts in</span>
-          <div class="experts-logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/512px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" class="expert-logo" onerror="this.style.display='none'">
-            <span class="expert-text">Meta</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png" alt="Instagram" class="expert-logo" onerror="this.style.display='none'">
-            <span class="expert-text">Instagram</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/512px-LinkedIn_Logo.svg.png" alt="LinkedIn" class="expert-logo" onerror="this.style.display='none'">
-            <span class="expert-text">LinkedIn</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/159px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" class="expert-logo" onerror="this.style.display='none'">
-            <span class="expert-text">YouTube</span>
-          </div>
-        </div>
+
 
         <!-- Main Headline -->
         <h1 class="hero-headline fade-in delay-1">
@@ -180,7 +164,7 @@
             <span>Let's Talk</span>
             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#portfolio" class="btn-ghost">View Our Work</a>
+          <a href="#services" class="btn-ghost">Our Services</a>
         </div>
 
         <!-- Scroll Indicator -->
@@ -196,6 +180,7 @@
         <div class="pcard pcard-3 tilt-right">
           <div class="pcard-media square-aspect">
             <div class="img-mock gradient-2">
+              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/computer_keyboard.mp4"></video>
               <div class="analytics-widget">
                 <div class="aw-label">Engagement Rate</div>
                 <div class="aw-value">18%</div>
@@ -219,6 +204,7 @@
         <div class="pcard pcard-4 tilt-right">
           <div class="pcard-media square-aspect">
             <div class="img-mock gradient-3">
+              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/guy_woman_mobile.mp4"></video>
               <div class="views-widget">
                 <div class="vw-label">Organic Views</div>
                 <div class="vw-value">1.2B+</div>
@@ -313,70 +299,157 @@
   </section>
 
   <!-- ======================================================
-       BRAND MARQUEE
+       PARTNERS & CREATORS ROTATING CIRCLES SECTION
   ====================================================== -->
-  <section class="marquee-section">
-    <!-- Row 1 → -->
-    <div class="marquee-track-wrap fade-edge">
-      <div class="marquee-track marquee-ltr">
-        <div class="marquee-set">
-          <span class="mbrand">OZiva</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">GIVA</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Bioderma</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Carbamide Forte</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Too Yumm!</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Surya Roshni</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+  <section class="partners-circle-section" id="partners">
+    <div class="section-inner">
+      <div class="partners-grid">
+        
+        <!-- Left Column: Copywriting Info -->
+        <div class="partners-info reveal">
+          <span class="section-tag">COLLABORATION ENGINE</span>
+          <h2 class="section-h2">Connecting Brands<br>with <span class="text-green">Creators.</span></h2>
+          <p class="section-sub">
+            We bridge India's premium D2C brands with our elite network of 3,000+ creators. Our dual-orbit engine fuels a continuous loop of organic trust, high-converting content, and performance scaling.
+          </p>
+          <div class="partners-metrics">
+            <div class="partner-metric">
+              <span class="pm-value">100+</span>
+              <span class="pm-label">Brands Scaled</span>
+            </div>
+            <div class="partner-metric">
+              <span class="pm-value">3,000+</span>
+              <span class="pm-label">Elite Creators</span>
+            </div>
+            <div class="partner-metric">
+              <span class="pm-value">18%</span>
+              <span class="pm-label">Avg. Engagement</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary mt-8">
+            <span>Join The Flywheel</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <div class="marquee-set" aria-hidden="true">
-          <span class="mbrand">OZiva</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">GIVA</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Bioderma</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Carbamide Forte</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Too Yumm!</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Surya Roshni</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-        </div>
-      </div>
-    </div>
 
-    <!-- Row 2 ← -->
-    <div class="marquee-track-wrap fade-edge mt-4">
-      <div class="marquee-track marquee-rtl">
-        <div class="marquee-set">
-          <span class="mbrand">Elevate Now</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Voyara</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Skysh</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Exploria</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Yasha Couture</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
+        <!-- Right Column: Dual Rotating Concentric Circles -->
+        <div class="partners-visual reveal">
+          <div class="circles-container">
+            <!-- Center Core -->
+            <div class="circles-core">
+              <span class="core-dot">●</span>
+              <span class="core-pulse"></span>
+            </div>
+
+            <!-- Inner Circle (Creators) -->
+            <div class="inner-circle-orbit">
+              <!-- Orbit Line -->
+              <div class="orbit-line-inner"></div>
+              
+              <!-- Rotating Container (CCW) -->
+              <div class="inner-rotate-container">
+                <!-- 6 Creator Avatars -->
+                <!-- Creator 1 -->
+                <div class="orbit-item" style="--angle: 0deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-green">AN</span>
+                  </div>
+                </div>
+                <!-- Creator 2 -->
+                <div class="orbit-item" style="--angle: 60deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-orange">RJ</span>
+                  </div>
+                </div>
+                <!-- Creator 3 -->
+                <div class="orbit-item" style="--angle: 120deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-purple">SI</span>
+                  </div>
+                </div>
+                <!-- Creator 4 -->
+                <div class="orbit-item" style="--angle: 180deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-blue">KP</span>
+                  </div>
+                </div>
+                <!-- Creator 5 -->
+                <div class="orbit-item" style="--angle: 240deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-pink">VI</span>
+                  </div>
+                </div>
+                <!-- Creator 6 -->
+                <div class="orbit-item" style="--angle: 300deg; --radius: var(--inner-radius);">
+                  <div class="item-content inner-content">
+                    <span class="avatar-init av-red">MA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Outer Circle (Brands) -->
+            <div class="outer-circle-orbit">
+              <!-- Orbit Line -->
+              <div class="orbit-line-outer"></div>
+              
+              <!-- Rotating Container (CW) -->
+              <div class="outer-rotate-container">
+                <!-- 8 Brand Badges -->
+                <!-- Brand 1 -->
+                <div class="orbit-item" style="--angle: 0deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">OZiva</span>
+                  </div>
+                </div>
+                <!-- Brand 2 -->
+                <div class="orbit-item" style="--angle: 45deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">GIVA</span>
+                  </div>
+                </div>
+                <!-- Brand 3 -->
+                <div class="orbit-item" style="--angle: 90deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Bioderma</span>
+                  </div>
+                </div>
+                <!-- Brand 4 -->
+                <div class="orbit-item" style="--angle: 135deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Too Yumm!</span>
+                  </div>
+                </div>
+                <!-- Brand 5 -->
+                <div class="orbit-item" style="--angle: 180deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Surya Roshni</span>
+                  </div>
+                </div>
+                <!-- Brand 6 -->
+                <div class="orbit-item" style="--angle: 225deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Elevate Now</span>
+                  </div>
+                </div>
+                <!-- Brand 7 -->
+                <div class="orbit-item" style="--angle: 270deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Voyara</span>
+                  </div>
+                </div>
+                <!-- Brand 8 -->
+                <div class="orbit-item" style="--angle: 315deg; --radius: var(--outer-radius);">
+                  <div class="item-content outer-content">
+                    <span class="brand-badge">Skysh</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="marquee-set" aria-hidden="true">
-          <span class="mbrand">Elevate Now</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Voyara</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Skysh</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Exploria</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-          <span class="mbrand">Yasha Couture</span>
-          <svg class="mstar" viewBox="0 0 40 38" fill="#C7FF42" width="14" height="14"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z"/></svg>
-        </div>
+
       </div>
     </div>
   </section>
@@ -427,12 +500,12 @@
         <div class="svc-card reveal">
           <div class="svc-inner">
             <div class="svc-front">
-              <span class="svc-tag">PERFORMANCE CORE</span>
-              <h3 class="svc-name">Paid Media<br>Advertising</h3>
+              <span class="svc-tag">PRODUCTION CORE</span>
+              <h3 class="svc-name">Content<br>Shoot</h3>
               <div class="svc-plus">+</div>
             </div>
             <div class="svc-back">
-              <p>Deploy micro-targeted paid campaigns on Meta, Google, and YouTube with custom attribution pipelines for accelerated return.</p>
+              <p>High-fidelity, psychology-driven production shoots. We script, produce, and direct high-impact video shoots optimized for social channels.</p>
               <a href="#contact" class="svc-link">Let's talk →</a>
             </div>
           </div>
@@ -452,133 +525,20 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======================================================
-       CASE STUDIES SLIDER
-  ====================================================== -->
-  <section class="portfolio-section" id="portfolio">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="section-tag">03 PORTFOLIO</span>
-        <h2 class="section-h2">The Proof<br>of Progress.</h2>
-      </div>
-
-      <div class="cs-wrapper">
-        <!-- Slide 1 -->
-        <div class="cs-slide active" id="csSlide1">
-          <div class="cs-left">
-            <div class="cs-type-row">
-              <p class="cs-stroke-text">UGC</p>
-              <span class="cs-badge">UGC & INFLUENCER</span>
+        <!-- Card 5 -->
+        <div class="svc-card reveal">
+          <div class="svc-inner">
+            <div class="svc-front">
+              <span class="svc-tag">POST PRODUCTION</span>
+              <h3 class="svc-name">Video<br>Editing</h3>
+              <div class="svc-plus">+</div>
             </div>
-            <h3 class="cs-brand">Surya Roshni</h3>
-            <p class="cs-desc">We partnered with India's legacy lighting brand to build social proof and expand presence through home-environment creator content.</p>
-            <div class="cs-stats">
-              <div class="cs-stat">
-                <span class="cs-stat-num">100+</span>
-                <span class="cs-stat-label">Creators Matched</span>
-              </div>
-              <div class="cs-stat">
-                <span class="cs-stat-num">800K+</span>
-                <span class="cs-stat-label">Organic Views</span>
-              </div>
-            </div>
-            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
-          </div>
-          <div class="cs-right">
-            <div class="cs-visual">
-              <div class="cs-visual-inner gradient-cs1">
-                <div class="cs-visual-tag">Lighting Range</div>
-                <div class="cs-visual-icon">
-                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2H10a2 2 0 01-2-2v-2.26A7 7 0 0112 2zM9 21h6M10 17h4"/></svg>
-                </div>
-              </div>
+            <div class="svc-back">
+              <p>Polished editing styled with psychological visual hooks, retentive pacing, and conversion-optimized sound design for maximum virality.</p>
+              <a href="#contact" class="svc-link">Let's talk →</a>
             </div>
           </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="cs-slide" id="csSlide2">
-          <div class="cs-left">
-            <div class="cs-type-row">
-              <p class="cs-stroke-text">UGC</p>
-              <span class="cs-badge">CREATOR ACQUISITION</span>
-            </div>
-            <h3 class="cs-brand">Too Yumm!</h3>
-            <p class="cs-desc">Psychology-driven short-form reels for FMCG brand Too Yumm!, driving massive views and landing high conversion metrics across platforms.</p>
-            <div class="cs-stats">
-              <div class="cs-stat">
-                <span class="cs-stat-num">50+</span>
-                <span class="cs-stat-label">Unique Reels</span>
-              </div>
-              <div class="cs-stat">
-                <span class="cs-stat-num">+310%</span>
-                <span class="cs-stat-label">Reach Hike</span>
-              </div>
-            </div>
-            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
-          </div>
-          <div class="cs-right">
-            <div class="cs-visual">
-              <div class="cs-visual-inner gradient-cs2">
-                <div class="cs-visual-tag">FMCG / Snack Brand</div>
-                <div class="cs-visual-icon">
-                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="cs-slide" id="csSlide3">
-          <div class="cs-left">
-            <div class="cs-type-row">
-              <p class="cs-stroke-text">SMM</p>
-              <span class="cs-badge">ORGANIC GRID WORK</span>
-            </div>
-            <h3 class="cs-brand">GIVA</h3>
-            <p class="cs-desc">We revamped the digital aesthetic of GIVA Jewellery, transforming their Instagram profile into a luxurious curated lookbook.</p>
-            <div class="cs-stats">
-              <div class="cs-stat">
-                <span class="cs-stat-num">120K+</span>
-                <span class="cs-stat-label">Followers Gained</span>
-              </div>
-              <div class="cs-stat">
-                <span class="cs-stat-num">5.4x</span>
-                <span class="cs-stat-label">ROAS Lift</span>
-              </div>
-            </div>
-            <a href="#contact" class="btn-ghost-sm">Read Details →</a>
-          </div>
-          <div class="cs-right">
-            <div class="cs-visual">
-              <div class="cs-visual-inner gradient-cs3">
-                <div class="cs-visual-tag">Jewellery Brand</div>
-                <div class="cs-visual-icon">
-                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="cs-nav">
-          <button class="cs-arrow" id="csPrev" aria-label="Previous">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          </button>
-          <div class="cs-dots">
-            <button class="cs-dot active" data-slide="0"></button>
-            <button class="cs-dot" data-slide="1"></button>
-            <button class="cs-dot" data-slide="2"></button>
-          </div>
-          <button class="cs-arrow" id="csNext" aria-label="Next">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
         </div>
       </div>
     </div>
@@ -590,7 +550,7 @@
   <section class="testimonials-section" id="testimonials">
     <div class="section-inner">
       <div class="section-head reveal">
-        <span class="section-tag">04 TESTIMONIALS</span>
+        <span class="section-tag">03 TESTIMONIALS</span>
         <h2 class="section-h2">What Brands<br>Say About Us</h2>
       </div>
 
@@ -641,7 +601,7 @@
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-left reveal">
-          <span class="section-tag">05 PROCESS</span>
+          <span class="section-tag">04 PROCESS</span>
           <h2 class="section-h2">From Brief<br>to <span class="text-green">Viral.</span></h2>
           <p class="about-desc">A battle-tested 4-step engine that takes your brand from obscurity to omnipresence in 90 days or less.</p>
           <a href="#contact" class="btn-primary mt-8">Start Your Growth</a>
@@ -687,7 +647,7 @@
     <div class="section-inner">
       <div class="faq-grid">
         <div class="faq-left reveal">
-          <span class="section-tag">06 FAQ</span>
+          <span class="section-tag">05 FAQ</span>
           <h2 class="section-h2">Frequently<br>Asked.</h2>
           <p class="faq-sub">Everything you want to know before we begin scaling your brand.</p>
           <a href="#contact" class="btn-ghost mt-8">Ask Us Anything</a>
@@ -766,7 +726,7 @@
       <div class="contact-grid">
         <!-- Left Info -->
         <div class="contact-info reveal">
-          <span class="section-tag">07 LET'S GROW</span>
+          <span class="section-tag">06 LET'S GROW</span>
           <h2 class="section-h2">Build the<br><span class="text-green">Next Era.</span></h2>
           <p class="contact-sub">Fill out our brief, choose your scaling pillars, and secure an alignment slot within 24 hours.</p>
 
@@ -790,8 +750,9 @@
           <div class="pillars-row" id="pillarsRow">
             <button class="pillar-btn" data-svc="Personal Branding">Personal Branding</button>
             <button class="pillar-btn" data-svc="Short Form UGC">Short Form UGC</button>
-            <button class="pillar-btn" data-svc="Paid Media">Paid Media Ads</button>
-            <button class="pillar-btn" data-svc="SMM">Social Management</button>
+            <button class="pillar-btn" data-svc="Content Shoot">Content Shoot</button>
+            <button class="pillar-btn" data-svc="Social Management">Social Management</button>
+            <button class="pillar-btn" data-svc="Video Editing">Video Editing</button>
           </div>
 
           <form id="contactForm" class="contact-form" novalidate>
@@ -845,16 +806,21 @@
   ====================================================== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-giant">SUP</div>
+      <div class="footer-giant">MOTION</div>
 
       <div class="footer-row">
         <div class="footer-col">
           <p class="footer-about">India's leading UGC & Social Media Performance agency. We replace guesswork with psychology.</p>
           <div class="footer-socials">
-            <a href="#" class="fsocial">IG</a>
-            <a href="#" class="fsocial">LI</a>
-            <a href="#" class="fsocial">TW</a>
-            <a href="#" class="fsocial">YT</a>
+            <a href="#" target="_blank" aria-label="Instagram" class="fsocial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://wa.me/918178061034" target="_blank" aria-label="WhatsApp" class="fsocial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.004 2c-5.518 0-9.986 4.469-9.986 9.987 0 1.762.459 3.483 1.332 5.004L2 22l5.143-1.349c1.472.803 3.127 1.226 4.856 1.226 5.517 0 9.985-4.47 9.985-9.987C21.984 6.469 17.52 2 12.004 2zm6.262 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            </a>
+            <a href="#" target="_blank" aria-label="LinkedIn" class="fsocial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.33V9h3.42v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.45v6.3z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -862,7 +828,6 @@
           <span class="footer-col-title">Navigation</span>
           <a href="#hero" class="footer-link">Home</a>
           <a href="#services" class="footer-link">Services</a>
-          <a href="#portfolio" class="footer-link">Case Studies</a>
           <a href="#about" class="footer-link">About Us</a>
           <a href="#faq" class="footer-link">FAQ</a>
         </div>
@@ -871,20 +836,21 @@
           <span class="footer-col-title">Services</span>
           <a href="#services" class="footer-link">Personal Branding</a>
           <a href="#services" class="footer-link">Short Form UGC</a>
-          <a href="#services" class="footer-link">Paid Media Ads</a>
+          <a href="#services" class="footer-link">Content Shoot</a>
           <a href="#services" class="footer-link">Social Management</a>
+          <a href="#services" class="footer-link">Video Editing</a>
         </div>
 
         <div class="footer-col">
           <span class="footer-col-title">Contact</span>
-          <a href="mailto:grow@sup.agency" class="footer-link">grow@sup.agency</a>
-          <a href="#" class="footer-link">+91 98765 43210</a>
+          <a href="mailto:grow@sup.agency" class="footer-link">support@motionlabswork.com</a>
+          <a href="https://wa.me/918178061034" target="_blank" class="footer-link">+91 8178061034</a>
           <a href="#contact" class="footer-link footer-cta-link">Book a Call →</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2025 SUP Marketing. All rights reserved.</span>
+        <span>© 2025 Motion Labs. All rights reserved.</span>
         <span>Made with ♥ in India</span>
       </div>
     </div>

@@ -6,49 +6,14 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCursor();
   initNav();
   initScrollAnimations();
   initCounters();
-  initCaseStudiesSlider();
   initFaq();
   initContactForm();
   initProgressBar();
+  initHeroVideoControls();
 });
-
-/* ──────────────────────────────────────────────────────────
-   1. CUSTOM CURSOR
-────────────────────────────────────────────────────────── */
-function initCursor() {
-  const cursor = document.getElementById('cursor');
-  const dot    = document.getElementById('cursorDot');
-  if (!cursor || !dot) return;
-  if (window.matchMedia('(hover: none)').matches) return;
-
-  let mx = 0, my = 0;   // mouse position
-  let cx = 0, cy = 0;   // cursor position (lerped)
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-  });
-
-  function animateCursor() {
-    cx += (mx - cx) * 0.1;
-    cy += (my - cy) * 0.1;
-    cursor.style.left = cx + 'px';
-    cursor.style.top  = cy + 'px';
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  document.querySelectorAll('a, button, [class*="card"], .pcard, .pillar-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%,-50%) scale(1.8)');
-    el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%,-50%) scale(1)');
-  });
-}
 
 /* ──────────────────────────────────────────────────────────
    2. NAVIGATION
@@ -154,53 +119,6 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
-/* ──────────────────────────────────────────────────────────
-   5. CASE STUDIES SLIDER
-────────────────────────────────────────────────────────── */
-function initCaseStudiesSlider() {
-  const slides   = document.querySelectorAll('.cs-slide');
-  const dots     = document.querySelectorAll('.cs-dot');
-  const prevBtn  = document.getElementById('csPrev');
-  const nextBtn  = document.getElementById('csNext');
-
-  if (!slides.length || !prevBtn) return;
-
-  let current = 0;
-  let autoTimer = null;
-
-  function show(idx) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (idx + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
-
-  function startAuto() {
-    autoTimer = setInterval(() => show(current + 1), 5500);
-  }
-  function resetAuto() { clearInterval(autoTimer); startAuto(); }
-
-  startAuto();
-
-  prevBtn.addEventListener('click', () => { show(current - 1); resetAuto(); });
-  nextBtn.addEventListener('click', () => { show(current + 1); resetAuto(); });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { show(i); resetAuto(); });
-  });
-
-  /* Touch / swipe support */
-  let startX = 0;
-  const wrapper = document.querySelector('.cs-wrapper');
-  if (wrapper) {
-    wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    wrapper.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 50) { show(current + (dx < 0 ? 1 : -1)); resetAuto(); }
-    }, { passive: true });
-  }
-}
 
 /* ──────────────────────────────────────────────────────────
    6. FAQ ACCORDION
@@ -341,3 +259,74 @@ function initProgressBar() {
     rightCards.forEach(c => c.style.transform = '');
   });
 })();
+
+/* ──────────────────────────────────────────────────────────
+   10. HERO UGC VIDEO INTERACTION CONTROLS
+   ────────────────────────────────────────────────────────── */
+function initHeroVideoControls() {
+  const video = document.getElementById('heroUgcVideo');
+  const playBtn = document.getElementById('videoPlayBtn');
+  const playIcon = document.getElementById('playIcon');
+  const muteBtn = document.getElementById('videoMuteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+  const bars = document.getElementById('videoBars');
+
+  if (!video) return;
+
+  // Toggle play/pause when clicking the video card or play button
+  function togglePlay() {
+    if (video.paused) {
+      video.play().catch(err => console.log('Video play failed:', err));
+      if (bars) bars.classList.remove('paused');
+      if (playIcon) {
+        // Change play icon to pause icon
+        playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      }
+    } else {
+      video.pause();
+      if (bars) bars.classList.add('paused');
+      if (playIcon) {
+        // Change play icon back to play icon
+        playIcon.innerHTML = '<path d="M5 3l14 9-14 9V3z"/>';
+      }
+    }
+  }
+
+  // Toggle mute/unmute
+  function toggleMute(e) {
+    if (e) e.stopPropagation(); // Avoid triggering card play toggle
+    video.muted = !video.muted;
+    if (video.muted) {
+      if (muteIcon) {
+        // Muted: show speaker box + cross icon (no sound waves)
+        muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>';
+      }
+    } else {
+      if (muteIcon) {
+        // Unmuted: show speaker box + sound waves
+        muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/>';
+      }
+    }
+  }
+
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (muteBtn) muteBtn.addEventListener('click', toggleMute);
+
+  // Click on the mock container also toggles play/pause
+  const mockContainer = video.parentElement;
+  if (mockContainer) {
+    mockContainer.addEventListener('click', (e) => {
+      // Prevent double trigger if clicking directly on buttons
+      if (e.target.closest('#videoPlayBtn') || e.target.closest('#videoMuteBtn')) return;
+      togglePlay();
+    });
+  }
+
+  // Synchronize initial UI state (default muted and playing)
+  if (video.autoplay) {
+    if (bars) bars.classList.remove('paused');
+    if (playIcon) {
+      playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    }
+  }
+}
