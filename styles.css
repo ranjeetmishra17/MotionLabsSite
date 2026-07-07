@@ -1811,12 +1811,12 @@ a.cd-value:hover { color: var(--accent); }
 
 /* ── 900px: Tablets ────────────────────────────────────── */
 @media (max-width: 900px) {
-  :root { --nav-h: 110px; }
+  :root { --nav-h: 160px; }
   /* Navbar */
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .nav-logo-img { height: 90px; }
+  .nav-logo-img { height: 150px; }
   .nav-inner { height: var(--nav-h); padding: 0 16px; align-items: center; }
   .nav-header { left: 12px; right: 12px; }
 
@@ -1881,9 +1881,9 @@ a.cd-value:hover { color: var(--accent); }
 
 /* ── 768px: Small tablets / large phones landscape ─────── */
 @media (max-width: 768px) {
-  :root { --nav-h: 100px; }
+  :root { --nav-h: 150px; }
   /* Navbar */
-  .nav-logo-img { height: 80px; }
+  .nav-logo-img { height: 140px; }
   .nav-inner { height: var(--nav-h); align-items: center; }
   .nav-header { left: 8px; right: 8px; }
 
@@ -1942,14 +1942,14 @@ a.cd-value:hover { color: var(--accent); }
 
 /* ── 600px: Large phones ───────────────────────────────── */
 @media (max-width: 600px) {
-  :root { --nav-h: 90px; }
+  :root { --nav-h: 140px; }
 
   /* Layout */
   .section-inner { padding: 0 16px; }
   .section-head { margin-bottom: 40px; }
 
   /* Navbar */
-  .nav-logo-img { height: 70px; }
+  .nav-logo-img { height: 130px; }
   .nav-inner { height: var(--nav-h); align-items: center; }
   .nav-header { left: 0; right: 0; }
 
@@ -2006,10 +2006,10 @@ a.cd-value:hover { color: var(--accent); }
 
 /* ── 480px: Small phones ───────────────────────────────── */
 @media (max-width: 480px) {
-  :root { --nav-h: 80px; }
+  :root { --nav-h: 130px; }
 
   /* Navbar */
-  .nav-logo-img { height: 60px; }
+  .nav-logo-img { height: 120px; }
   .nav-inner { height: var(--nav-h); align-items: center; padding: 0 14px; }
   .nav-header { left: 0; right: 0; border-left: none; border-right: none; border-radius: 0; }
 
@@ -2058,8 +2058,8 @@ a.cd-value:hover { color: var(--accent); }
 
 /* ── 360px: Very small phones ──────────────────────────── */
 @media (max-width: 360px) {
-  :root { --nav-h: 72px; }
-  .nav-logo-img { height: 52px; }
+  :root { --nav-h: 120px; }
+  .nav-logo-img { height: 110px; }
   .nav-inner { height: var(--nav-h); }
   .hero-headline { font-size: clamp(1.5rem, 13vw, 2rem); }
   .hero-inner { padding: 16px 12px 40px; }
