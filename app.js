@@ -1,6 +1,6 @@
 /* ============================================================
-   SUP MARKETING — Main JavaScript
-   Custom Cursor · Nav · Counters · Sliders · FAQ · Form
+   MOTION LABS — Main JavaScript
+   Nav · Counters · Reels · Form · Progress · Video
 ============================================================ */
 
 'use strict';
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initProgressBar();
   initHeroVideoControls();
+  initReels();
 });
 
 /* ──────────────────────────────────────────────────────────
@@ -168,11 +169,14 @@ function initFaq() {
    7. CONTACT FORM
 ────────────────────────────────────────────────────────── */
 function initContactForm() {
-  /* Pillar toggle buttons */
-  const pillarsRow = document.getElementById('pillarsRow');
-  const hiddenSvc  = document.getElementById('selectedServices');
-  const selected   = new Set();
+  const pillarsRow  = document.getElementById('pillarsRow');
+  const hiddenSvc   = document.getElementById('selectedServices');
+  const formWrap    = pillarsRow && pillarsRow.closest('.contact-form-wrap');
+  const sectionHdr  = formWrap && formWrap.querySelector('.form-section-header');
+  const formDivider = formWrap && formWrap.querySelector('.form-divider');
+  const selected    = new Set();
 
+  /* Pillar toggle buttons */
   if (pillarsRow) {
     pillarsRow.querySelectorAll('.pillar-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -185,29 +189,33 @@ function initContactForm() {
   }
 
   /* Form submission */
-  const form        = document.getElementById('contactForm');
-  const success     = document.getElementById('formSuccess');
-  const resetBtn    = document.getElementById('resetForm');
+  const form     = document.getElementById('contactForm');
+  const success  = document.getElementById('formSuccess');
+  const resetBtn = document.getElementById('resetForm');
 
   if (!form) return;
 
   form.addEventListener('submit', e => {
     e.preventDefault();
 
-    /* Basic validation */
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
       if (!field.value.trim()) {
         valid = false;
         field.style.borderColor = '#ff4444';
-        field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+        field.style.boxShadow   = '0 0 0 3px rgba(255,68,68,0.14)';
+        field.classList.add('field-shake');
+        field.addEventListener('animationend', () => field.classList.remove('field-shake'), { once: true });
+        field.addEventListener('input', () => { field.style.borderColor = ''; field.style.boxShadow = ''; }, { once: true });
       }
     });
     if (!valid) return;
 
-    /* Simulate success */
+    /* Show success */
     form.style.display = 'none';
-    if (pillarsRow) pillarsRow.style.display = 'none';
+    if (pillarsRow)   pillarsRow.style.display  = 'none';
+    if (sectionHdr)   sectionHdr.style.display  = 'none';
+    if (formDivider)  formDivider.style.display  = 'none';
     if (success) success.classList.add('visible');
   });
 
@@ -216,10 +224,9 @@ function initContactForm() {
       form.reset();
       form.style.display = '';
       success.classList.remove('visible');
-      if (pillarsRow) {
-        pillarsRow.style.display = '';
-        pillarsRow.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('selected'));
-      }
+      if (pillarsRow)   { pillarsRow.style.display = ''; pillarsRow.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('selected')); }
+      if (sectionHdr)   sectionHdr.style.display  = '';
+      if (formDivider)  formDivider.style.display  = '';
       selected.clear();
     });
   }
@@ -342,5 +349,53 @@ function initHeroVideoControls() {
     if (playIcon) {
       playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
     }
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   11. REELS — infinite marquee + hover play
+────────────────────────────────────────────────────────── */
+function initReels() {
+  const wrap  = document.querySelector('.reels-track-wrap');
+  const track = document.querySelector('.reels-marquee-track');
+  const inner = document.querySelector('.reels-inner');
+  if (!wrap || !track || !inner) return;
+
+  /* Clone the set of cards once inside the reels-marquee-track wrapper */
+  const clone = inner.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  track.appendChild(clone);
+
+  /* Hover play / pause for cards that have a real <source> src */
+  wrap.querySelectorAll('.reel-frame').forEach(frame => {
+    const video = frame.querySelector('.reel-video');
+    if (!video) return;
+
+    const src = video.querySelector('source');
+    if (src && src.getAttribute('src')) {
+      frame.classList.add('has-video');
+    }
+
+    frame.addEventListener('mouseenter', () => {
+      if (!frame.classList.contains('has-video')) return;
+      video.play().catch(() => {});
+    });
+    frame.addEventListener('mouseleave', () => video.pause());
+
+    /* Touch: tap to toggle */
+    frame.addEventListener('click', () => {
+      if (!frame.classList.contains('has-video')) return;
+      video.paused ? video.play().catch(() => {}) : video.pause();
+    });
+  });
+
+  /* Pause all videos when section leaves viewport */
+  const section = document.querySelector('.video-showcase-section');
+  if (section) {
+    new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        wrap.querySelectorAll('.reel-video').forEach(v => v.pause());
+      }
+    }, { threshold: 0 }).observe(section);
   }
 }
