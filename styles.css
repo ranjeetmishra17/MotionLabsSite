@@ -902,6 +902,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
   gap: 10px;
   width: 100%;
   overflow: visible;
@@ -910,80 +911,46 @@ ul { list-style: none; }
   position: relative;
   z-index: 2;
   display: inline-block;
-  background: #FFFFFF;
-  padding-right: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .inline-avatars {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   position: relative;
   z-index: 1;
+  /* push first child so negative margins work */
+  padding-left: 22px;
 }
 .iavatar {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 2.5px solid var(--bg);
+  border: 3px solid #FFFFFF;
   margin-left: -22px;
+  overflow: hidden;
+  flex-shrink: 0;
   opacity: 0;
-  transform: translateX(-100px);
-  animation: slideOutAvatar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transform: translateX(-80px);
+  animation: slideInAvatar 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #F3F3F3;
 }
-.iavatar:first-child { margin-left: 0; }
-
-.ia-su {
-  background: #FFFFFF;
-  border: 2.5px solid #E53E3E;
-  color: #E53E3E;
-  animation-delay: 0.3s;
-}
-.ia-jin {
-  background: #E53E3E;
-  border: 2.5px solid #E53E3E;
-  color: #FFFFFF;
-  font-size: 0.85rem;
-  animation-delay: 0.42s;
-}
-.ia-venn {
-  background: #FFFFFF;
-  border: 2.5px solid rgba(26,26,26,0.12);
-  animation-delay: 0.54s;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ia-to-yu {
-  background: #800000;
-  border: 2.5px solid #800000;
-  color: #FFFFFF;
-  flex-direction: column;
-  line-height: 0.95;
-  font-size: 0.55rem;
-  justify-content: center;
-  animation-delay: 0.66s;
-}
-.ia-cf {
-  background: #FFFFFF;
-  border: 2.5px solid rgba(26,26,26,0.12);
-  animation-delay: 0.78s;
-  padding: 0;
+.iavatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
 }
 
-@keyframes slideOutAvatar {
+@keyframes slideInAvatar {
   0% {
-    transform: translateX(-120px);
+    transform: translateX(-80px);
     opacity: 0;
   }
-  30% {
+  40% {
     opacity: 1;
   }
   100% {
@@ -991,6 +958,7 @@ ul { list-style: none; }
     opacity: 1;
   }
 }
+
 
 .hero-sub {
   font-size: 0.95rem;
