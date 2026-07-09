@@ -247,7 +247,7 @@ ul { list-style: none; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #C7FF42;
+  background-color: #1A1A1A;
   margin-right: 6px;
 }
 .has-dropdown { position: relative; }
@@ -465,7 +465,7 @@ ul { list-style: none; }
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 800px; height: 600px;
-  background: radial-gradient(ellipse, rgba(199,255,66,0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(26,26,26,0.03) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-inner {
@@ -492,7 +492,7 @@ ul { list-style: none; }
 .pcard {
   position: relative;
   border-radius: 16px;
-  border: 2px solid #C7FF42;
+  border: 1.5px solid #1A1A1A;
   padding: 6px;
   background: #FFFFFF;
   box-shadow: 0 10px 30px rgba(0,0,0,0.04);
@@ -1010,7 +1010,7 @@ ul { list-style: none; }
   margin-bottom: 48px;
 }
 .btn-primary-pill {
-  background: #000000;
+  background: #1A1A1A;
   color: #FFFFFF !important;
   font-weight: 700;
   font-size: 0.95rem;
@@ -1020,15 +1020,15 @@ ul { list-style: none; }
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 .btn-primary-pill:hover {
-  background: #333333;
+  background: #7A7A7A;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 .btn-arrow-circle {
   width: 48px;
   height: 48px;
-  background: #C7FF42;
-  color: #1A1A1A !important;
+  background: #1A1A1A;
+  color: #FFFFFF !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1038,7 +1038,7 @@ ul { list-style: none; }
 }
 .btn-arrow-circle:hover {
   transform: rotate(45deg) scale(1.05);
-  background: #d6ff66;
+  background: #7A7A7A;
 }
 .scroll-hint {
   display: flex;
@@ -1061,7 +1061,7 @@ ul { list-style: none; }
 }
 .scroll-wheel {
   width: 3px; height: 8px;
-  background: var(--accent);
+  background: #1A1A1A;
   border-radius: 2px;
   animation: scrollDown 1.5s ease infinite;
 }
