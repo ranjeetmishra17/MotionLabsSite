@@ -12,9 +12,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 
@@ -91,7 +91,7 @@
 
       <!-- LEFT CARDS COLUMN -->
       <div class="hero-cards-left">
-        <!-- Card 1: UGC Video (9:16) -->
+        <!-- Card 1: Tall UGC Video (9:16) -->
         <div class="pcard pcard-1 tilt-left">
           <div class="pcard-media video-aspect">
             <div class="video-mock">
@@ -115,21 +115,23 @@
           </div>
         </div>
 
-        <!-- Card 2: Square Image -->
-        <div class="pcard pcard-2 tilt-left">
-          <div class="pcard-media square-aspect">
-            <div class="img-mock gradient-1">
-              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/docs/walking_talking.mp4"></video>
-              <div class="creator-stack">
-                <div class="creator-ring r1"></div>
-                <div class="creator-ring r2"></div>
-                <div class="creator-ring r3"></div>
-                <span class="creator-count-badge">3,000+<br>Creators</span>
+        <!-- Small Cards Row Left -->
+        <div class="pcard-row row-left">
+          <!-- Small Card Left 1: Homesick -->
+          <div class="pcard pcard-small tilt-left">
+            <div class="pcard-media square-aspect">
+              <div class="img-mock">
+                <img src="assets/case_study_1.png" alt="Homesick" class="card-image">
               </div>
             </div>
           </div>
-          <div class="sparkle sparkle-tl">
-            <svg width="20" height="20" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
+          <!-- Small Card Left 2: Billboard -->
+          <div class="pcard pcard-small tilt-right">
+            <div class="pcard-media square-aspect">
+              <div class="img-mock">
+                <img src="assets/case_study_2.png" alt="Billboard" class="card-image">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -149,12 +151,34 @@
           <div class="camera-bracket br"></div>
         </div>
 
+        <!-- Experts in Social Logos Row -->
+        <div class="experts-row fade-in">
+          <span class="experts-label">Experts in</span>
+          <div class="experts-logos">
+            <!-- Meta (Facebook) -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#0064E0">
+              <path d="M18.82 10.37c-.77-1.12-1.89-1.81-3.15-1.92-1.32-.12-2.55.35-3.48 1.25a6.4 6.4 0 0 0-3.48-1.25c-1.26.11-2.38.8-3.15 1.92a4.46 4.46 0 0 0-.66 3.67 4.14 4.14 0 0 0 2.27 2.68c1.17.58 2.5.54 3.67-.1a7.48 7.48 0 0 0 1.35-1.02c.48.51.98.87 1.35 1.02 1.17.64 2.5.68 3.67.1 1-.5 1.83-1.42 2.27-2.68a4.46 4.46 0 0 0-.66-3.67zm-9.35 3.52c-.6.42-1.36.4-1.93-.05a1.86 1.86 0 0 1-.84-1.38c-.08-.66.21-1.28.77-1.6.43-.25.95-.3 1.45-.14a3.86 3.86 0 0 1 1.7 1.12c-.28.37-.66.73-1.15 2.05zm6.8-.05c-.57.45-1.33.47-1.93.05-.49-1.32-.87-1.68-1.15-2.05a3.86 3.86 0 0 1 1.7-1.12c.5-.16 1.02-.1 1.45.14.56.32.85.94.77 1.6a1.86 1.86 0 0 1-.84 1.38z"/>
+            </svg>
+            <!-- Instagram -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E1306C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <!-- LinkedIn -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#0077B5">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <!-- YouTube -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+        </div>
+
         <!-- Main Headline -->
         <h1 class="hero-headline fade-in delay-1">
-          Don't just
-          <div class="headline-row">
-            <span>Get</span>
-          </div>
+          Don't just <span class="serif-italic">Get</span>
           <div class="headline-row-avatars">
             <span class="headline-word">Viewed</span>
             <div class="inline-avatars">
@@ -162,20 +186,24 @@
               <div class="iavatar ia2"></div>
               <div class="iavatar ia3"></div>
             </div>
+            <span class="lowercase-get">get</span>
           </div>
+          <span class="highlight-loved">LOVED!!</span>
         </h1>
 
         <p class="hero-sub fade-in delay-2">
-          India's leading UGC & Social Media Performance Engine.<br>
-          We replace guesswork with psychology scaling D2C brands past records.
+          If you're tired of the plain, boring, repetitive content that gets ignored in less than 3 seconds, we are here to make your brand not just viewed but LOVED by your to be customers
         </p>
 
         <div class="hero-btns fade-in delay-3">
           <a href="#contact" class="btn-primary">
-            <span>Let's Talk</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span>Get In Touch</span>
+            <div class="cta-arrow" style="margin-left: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </div>
           </a>
-          <a href="#services" class="btn-ghost">Our Services</a>
         </div>
 
         <!-- Scroll Indicator -->
@@ -187,49 +215,51 @@
 
       <!-- RIGHT CARDS COLUMN -->
       <div class="hero-cards-right">
-        <!-- Card 3: Analytics -->
+        <!-- Card 3: Tall UGC Video (9:16) -->
         <div class="pcard pcard-3 tilt-right">
-          <div class="pcard-media square-aspect">
-            <div class="img-mock gradient-2">
-              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/computer_keyboard.mp4"></video>
-              <div class="analytics-widget">
-                <div class="aw-label">Engagement Rate</div>
-                <div class="aw-value">18%</div>
-                <div class="aw-bars">
-                  <span style="height:35%"></span>
-                  <span style="height:55%"></span>
-                  <span style="height:80%"></span>
-                  <span style="height:60%"></span>
-                  <span style="height:95%" class="bar-accent"></span>
-                </div>
-                <div class="aw-change">↑ +14% vs industry</div>
+          <div class="pcard-media video-aspect">
+            <div class="video-mock">
+              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_220,h_390/docs/walking_talking.mp4"></video>
+              <div class="video-play">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
               </div>
-            </div>
-          </div>
-          <div class="sparkle sparkle-tr">
-            <svg width="20" height="20" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
-          </div>
-        </div>
-
-        <!-- Card 4: Brand -->
-        <div class="pcard pcard-4 tilt-right">
-          <div class="pcard-media square-aspect">
-            <div class="img-mock gradient-3">
-              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_300,h_300/guy_woman_mobile.mp4"></video>
-              <div class="views-widget">
-                <div class="vw-label">Organic Views</div>
-                <div class="vw-value">1.2B+</div>
-                <div class="vw-icon">
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#C7FF42" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                </div>
+              <div class="video-bars">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
               </div>
+              <div class="video-badge">UGC AD</div>
             </div>
           </div>
           <div class="sparkle sparkle-tr">
             <svg width="24" height="24" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#C7FF42"/></svg>
           </div>
         </div>
+
+        <!-- Small Cards Row Right -->
+        <div class="pcard-row row-right">
+          <!-- Small Card Right 1: Tinder Bios -->
+          <div class="pcard pcard-small tilt-left">
+            <div class="pcard-media square-aspect">
+              <div class="img-mock gradient-2" style="display: flex; align-items: center; justify-content: center; padding: 10px;">
+                <div class="views-widget" style="background: none; border: none; padding: 0; width: 100%; text-align: center;">
+                  <div class="vw-label" style="font-size: 0.55rem; color: #a4e82f; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Tinder Bios</div>
+                  <div class="vw-value" style="font-size: 0.85rem; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-top: 4px;">If Snacks Had...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Small Card Right 2: Patio Mockup -->
+          <div class="pcard pcard-small tilt-right">
+            <div class="pcard-media square-aspect">
+              <div class="img-mock">
+                <img src="assets/case_study_3.png" alt="Patio Mockup" class="card-image">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+    </div>
+  </section>
 
     </div>
   </section>
