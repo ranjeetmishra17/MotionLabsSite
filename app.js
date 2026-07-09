@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgressBar();
   initHeroVideoControls();
   initReels();
+  initServiceCardTouch();
 });
 
 /* ──────────────────────────────────────────────────────────
@@ -366,27 +367,45 @@ function initReels() {
   clone.setAttribute('aria-hidden', 'true');
   track.appendChild(clone);
 
-  /* Hover play / pause for cards that have a real <source> src */
+  /* Hover play / pause for cards that have a real Vimeo iframe */
   wrap.querySelectorAll('.reel-frame').forEach(frame => {
-    const video = frame.querySelector('.reel-video');
-    if (!video) return;
+    const iframe = frame.querySelector('.reel-video');
+    if (!iframe) return;
 
-    const src = video.querySelector('source');
-    if (src && src.getAttribute('src')) {
+    const src = iframe.getAttribute('src');
+    if (src && src.includes('vimeo.com')) {
       frame.classList.add('has-video');
+
+      // Initialize Vimeo Player
+      const player = typeof Vimeo !== 'undefined' ? new Vimeo.Player(iframe) : null;
+      if (player) {
+        iframe.vimeoPlayer = player;
+        
+        // Pause immediately since background=1 autoplays by default
+        player.pause().catch(() => {});
+
+        frame.addEventListener('mouseenter', () => {
+          if (!frame.classList.contains('has-video')) return;
+          player.play().catch(err => console.log('Vimeo play error:', err));
+        });
+
+        frame.addEventListener('mouseleave', () => {
+          player.pause().catch(() => {});
+        });
+
+        /* Touch/Click: tap to toggle */
+        frame.addEventListener('click', () => {
+          if (!frame.classList.contains('has-video')) return;
+          player.getPaused().then(paused => {
+            if (paused) {
+              player.play().catch(() => {});
+            } else {
+              player.pause().catch(() => {});
+            }
+          }).catch(() => {});
+        });
+      }
     }
-
-    frame.addEventListener('mouseenter', () => {
-      if (!frame.classList.contains('has-video')) return;
-      video.play().catch(() => {});
-    });
-    frame.addEventListener('mouseleave', () => video.pause());
-
-    /* Touch: tap to toggle */
-    frame.addEventListener('click', () => {
-      if (!frame.classList.contains('has-video')) return;
-      video.paused ? video.play().catch(() => {}) : video.pause();
-    });
   });
 
   /* Pause all videos when section leaves viewport */
@@ -394,8 +413,38 @@ function initReels() {
   if (section) {
     new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) {
-        wrap.querySelectorAll('.reel-video').forEach(v => v.pause());
+        wrap.querySelectorAll('.reel-video').forEach(iframe => {
+          if (iframe.vimeoPlayer) {
+            iframe.vimeoPlayer.pause().catch(() => {});
+          }
+        });
       }
     }, { threshold: 0 }).observe(section);
   }
+}
+
+/* ──────────────────────────────────────────────────────────
+   TOUCH SUPPORT — Service Card Flip
+   On coarse-pointer (touch) devices, cards flip on tap
+────────────────────────────────────────────────────────── */
+function initServiceCardTouch() {
+  /* Only activate on actual touch/coarse-pointer devices */
+  const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (!isTouch) return;
+
+  document.querySelectorAll('.svc-card').forEach(card => {
+    card.addEventListener('click', () => {
+      /* Toggle flipped state; close siblings */
+      const isFlipped = card.classList.contains('flipped');
+      document.querySelectorAll('.svc-card').forEach(c => c.classList.remove('flipped'));
+      if (!isFlipped) card.classList.add('flipped');
+    });
+  });
+
+  /* Close any open card when tapping outside */
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.svc-card')) {
+      document.querySelectorAll('.svc-card').forEach(c => c.classList.remove('flipped'));
+    }
+  });
 }
