@@ -247,7 +247,7 @@ ul { list-style: none; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #C7FF42;
+  background-color: #1A1A1A;
   margin-right: 6px;
 }
 .has-dropdown { position: relative; }
@@ -465,7 +465,7 @@ ul { list-style: none; }
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 800px; height: 600px;
-  background: radial-gradient(ellipse, rgba(199,255,66,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(26,26,26,0.02) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-inner {
@@ -492,10 +492,10 @@ ul { list-style: none; }
 .pcard {
   position: relative;
   border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid #E5E5E5;
   padding: 6px;
   background: #FFFFFF;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
   transition: transform 0.6s var(--ease);
 }
 .pcard.tilt-left { transform: rotate(-5deg); }
@@ -857,11 +857,11 @@ ul { list-style: none; }
   left: -8px;
   font-size: 1.4rem;
   line-height: 1;
-  color: #C7FF42;
+  color: #7A7A7A;
   font-style: italic;
   font-family: 'Playfair Display', Georgia, serif;
   pointer-events: none;
-  filter: drop-shadow(0 0 4px rgba(199,255,66,0.6));
+  filter: none;
   transform: rotate(-20deg);
   display: block;
 }
@@ -958,35 +958,36 @@ ul { list-style: none; }
   margin-bottom: 48px;
 }
 .btn-primary-pill {
-  background: #C7FF42;
-  color: #1A1A1A !important;
+  background: #1A1A1A;
+  color: #FFFFFF !important;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 14px 32px;
   border-radius: 50px;
   transition: all 0.3s var(--ease);
-  box-shadow: 0 4px 15px rgba(199,255,66,0.25);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 .btn-primary-pill:hover {
-  background: #d6ff66;
+  background: #7A7A7A;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(199,255,66,0.35);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 }
 .btn-arrow-circle {
   width: 48px;
   height: 48px;
-  background: #1A1A1A;
-  color: #FFFFFF !important;
+  background: #E5E5E5;
+  color: #1A1A1A !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s var(--ease), background 0.3s var(--ease);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .btn-arrow-circle:hover {
   transform: rotate(45deg) scale(1.05);
-  background: #333333;
+  background: #7A7A7A;
+  color: #FFFFFF !important;
 }
 .scroll-hint {
   display: flex;
