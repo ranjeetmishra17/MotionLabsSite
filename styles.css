@@ -247,7 +247,7 @@ ul { list-style: none; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #1A1A1A;
+  background-color: #C7FF42;
   margin-right: 6px;
 }
 .has-dropdown { position: relative; }
@@ -465,7 +465,7 @@ ul { list-style: none; }
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 800px; height: 600px;
-  background: radial-gradient(ellipse, rgba(26,26,26,0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(199,255,66,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-inner {
@@ -492,10 +492,10 @@ ul { list-style: none; }
 .pcard {
   position: relative;
   border-radius: 16px;
-  border: 1.5px solid #1A1A1A;
+  border: 1px solid rgba(0,0,0,0.08);
   padding: 6px;
   background: #FFFFFF;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
   transition: transform 0.6s var(--ease);
 }
 .pcard.tilt-left { transform: rotate(-5deg); }
@@ -1010,19 +1010,19 @@ ul { list-style: none; }
   margin-bottom: 48px;
 }
 .btn-primary-pill {
-  background: #1A1A1A;
-  color: #FFFFFF !important;
+  background: #C7FF42;
+  color: #1A1A1A !important;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 14px 32px;
   border-radius: 50px;
   transition: all 0.3s var(--ease);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 15px rgba(199,255,66,0.25);
 }
 .btn-primary-pill:hover {
-  background: #7A7A7A;
+  background: #d6ff66;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 25px rgba(199,255,66,0.35);
 }
 .btn-arrow-circle {
   width: 48px;
@@ -1034,11 +1034,11 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   transition: transform 0.3s var(--ease), background 0.3s var(--ease);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 .btn-arrow-circle:hover {
   transform: rotate(45deg) scale(1.05);
-  background: #7A7A7A;
+  background: #333333;
 }
 .scroll-hint {
   display: flex;
@@ -2133,9 +2133,8 @@ ul { list-style: none; }
 }
 
 
-/* ============================================================
-   GLOBAL FOOTPRINT SECTION (DARK PREMIUM DASHBOARD)
-============================================================ */
+
+
 .footprint-section {
   padding: 100px 0;
   border-top: 1px solid var(--border);
