@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body>
 
@@ -182,13 +182,23 @@
 
         <!-- Main Headline -->
         <h1 class="hero-headline fade-in delay-1">
-          <div class="headline-row">Don't just <span class="serif-italic">Get</span></div>
+          <div class="headline-row">Don't just <span class="get-word-wrapper">Get<span class="get-g-sparkle"></span></span></div>
           <div class="headline-row-avatars">
             <span class="headline-word">Viewed</span>
             <div class="inline-avatars">
               <div class="iavatar ia-su">SU</div>
-              <div class="iavatar ia-jin">jin</div>
-              <div class="iavatar ia-tu">TU</div>
+              <div class="iavatar ia-jin">Jim</div>
+              <div class="iavatar ia-venn">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <circle cx="12" cy="15" r="5.5" fill="#0064E0" opacity="0.75" />
+                  <circle cx="20" cy="15" r="5.5" fill="#A2E300" opacity="0.75" />
+                  <text x="10" y="26" font-family="'Outfit', sans-serif" font-weight="900" font-size="6px" fill="#7A7A7A">D</text>
+                </svg>
+              </div>
+              <div class="iavatar ia-to-yu">
+                <span>TO</span>
+                <span>YU</span>
+              </div>
               <div class="iavatar ia-cf">
                 <svg viewBox="0 0 32 32" width="28" height="28">
                   <text x="4" y="21" fill="#0E377E" font-family="'Outfit', sans-serif" font-weight="900" font-size="16px">C</text>
@@ -196,7 +206,7 @@
                 </svg>
               </div>
             </div>
-            <span class="serif-italic lowercase-get">get</span>
+            <span class="lowercase-get">get</span>
           </div>
           <div class="headline-row"><span class="highlight-loved">LOVED!!</span></div>
         </h1>
@@ -205,14 +215,13 @@
           If you're tired of the plain, boring, repetitive content that gets ignored in less than 3 seconds, we are here to make your brand not just viewed but LOVED by your to be customers
         </p>
 
-        <div class="hero-btns fade-in delay-3">
-          <a href="#contact" class="btn-primary">
-            <span>Get In Touch</span>
-            <div class="cta-arrow" style="margin-left: 8px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <path d="M7 17L17 7M17 7H7M17 7v10"/>
-              </svg>
-            </div>
+        <!-- Dynamic Combined CTA Group -->
+        <div class="hero-cta-group fade-in delay-3">
+          <a href="#contact" class="btn-primary-pill">Get In Touch</a>
+          <a href="#contact" class="btn-arrow-circle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
           </a>
         </div>
 
