@@ -834,12 +834,15 @@ ul { list-style: none; }
 
 /* Headline */
 .hero-headline {
-  font-size: clamp(2.8rem, 7vw, 6.2rem);
+  font-size: clamp(2.6rem, 6.8vw, 6.2rem);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.05;
+  line-height: 0.92;
   letter-spacing: -0.04em;
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .serif-italic {
   font-family: 'Playfair Display', Georgia, serif;
@@ -849,9 +852,8 @@ ul { list-style: none; }
 }
 .lowercase-get {
   text-transform: lowercase;
-  font-weight: 500;
-  font-size: 0.85em;
-  margin-left: 8px;
+  font-size: 0.8em;
+  margin-left: 12px;
 }
 .highlight-loved {
   display: block;
@@ -859,15 +861,21 @@ ul { list-style: none; }
   font-weight: 900;
   letter-spacing: -0.05em;
   color: var(--accent);
-  margin-top: 8px;
+  margin-top: 4px;
+}
+.headline-row {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 .headline-row-avatars {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
   overflow: visible;
+  margin: 4px 0;
 }
 .headline-word {
   position: relative;
@@ -887,31 +895,44 @@ ul { list-style: none; }
   height: 44px;
   border-radius: 50%;
   border: 2.5px solid var(--bg);
-  margin-left: -14px;
+  margin-left: -18px;
   opacity: 0;
   transform: translateX(-100px);
   animation: slideOutAvatar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 .iavatar:first-child { margin-left: 0; }
-.ia1 {
-  background-image: url('assets/Creators/Thugesh.webp');
-  background-size: cover;
-  background-position: center top;
+
+.ia-su {
+  background: #FFFFFF;
+  border: 2.5px solid #E53E3E;
+  color: #E53E3E;
   animation-delay: 0.3s;
 }
-.ia2 {
-  background-image: url('assets/Creators/Raj Shamni.webp');
-  background-size: cover;
-  background-position: center;
-  animation-delay: 0.5s;
+.ia-jin {
+  background: #E53E3E;
+  border: 2.5px solid #E53E3E;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  animation-delay: 0.45s;
 }
-.ia3 {
-  background-image: url('assets/Brand logos/Paytm.webp');
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #FFFFFF;
-  animation-delay: 0.7s;
+.ia-tu {
+  background: #E53E3E;
+  border: 2.5px solid #E53E3E;
+  color: #FFFFFF;
+  animation-delay: 0.6s;
+}
+.ia-cf {
+  background: #FFFFFF;
+  border: 2.5px solid rgba(26,26,26,0.15);
+  animation-delay: 0.75s;
+  padding: 0;
 }
 
 @keyframes slideOutAvatar {
