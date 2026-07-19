@@ -583,35 +583,3 @@ function initTestimonials() {
 
 
 
-// --- MOBILE HERO LAYOUT RESTRUCTURING ---
-function enforceMobileLayout() {
-  const isMobile = window.innerWidth <= 991;
-  const pcard1 = document.querySelector('.pcard-1');
-  const pcard3 = document.querySelector('.pcard-3');
-  const ctaGroup = document.querySelector('.hero-cta-group');
-  const heroCenter = document.querySelector('.hero-center');
-  const cardsLeft = document.querySelector('.hero-cards-left');
-  const cardsRight = document.querySelector('.hero-cards-right');
-
-  if (!pcard1 || !pcard3 || !heroCenter || !ctaGroup || !cardsLeft || !cardsRight) return;
-
-  let mobileCards = document.querySelector('.mobile-cards-wrapper');
-  
-  if (isMobile) {
-    if (!mobileCards) {
-      mobileCards = document.createElement('div');
-      mobileCards.className = 'mobile-cards-wrapper';
-      heroCenter.insertBefore(mobileCards, ctaGroup);
-    }
-    if (pcard1.parentElement !== mobileCards) mobileCards.appendChild(pcard1);
-    if (pcard3.parentElement !== mobileCards) mobileCards.appendChild(pcard3);
-  } else {
-    // Desktop: Put them back
-    if (pcard1.parentElement !== cardsLeft) cardsLeft.insertBefore(pcard1, cardsLeft.firstChild);
-    if (pcard3.parentElement !== cardsRight) cardsRight.insertBefore(pcard3, cardsRight.firstChild);
-    if (mobileCards) mobileCards.remove();
-  }
-}
-window.addEventListener('resize', enforceMobileLayout);
-document.addEventListener('DOMContentLoaded', enforceMobileLayout);
-enforceMobileLayout(); // Run immediately in case DOM is already loaded
