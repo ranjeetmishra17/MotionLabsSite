@@ -3168,3 +3168,31 @@ a.cd-value:hover { color: var(--accent); }
     min-height: 500px !important;
   }
 }
+
+/* --- Mobile Fixes: Remove Hero Logo/Camera & Horizontal Scroll Testimonials --- */
+@media (max-width: 991px) {
+  /* Remove big logo and camera brackets */
+  .hero-mobile-logo-wrapper { display: none !important; }
+  .camera-bracket { display: none !important; }
+  
+  /* Horizontal scroll for testimonials */
+  .testi-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none;
+  }
+  .testi-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .testi-card {
+    flex: 0 0 85% !important;
+    scroll-snap-align: center;
+    margin-top: 0 !important; /* Override inline styles if any */
+  }
+}
