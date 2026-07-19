@@ -3316,7 +3316,8 @@ a.cd-value:hover { color: var(--accent); }
 
 
 
-/* --- TARGETED RESPONSIVE FIXES (MYTHS, COLLAB, CALENDLY) --- */
+
+/* --- TARGETED RESPONSIVE FIXES (HERO, MYTHS, COLLAB, CALENDLY) --- */
 
 @media (max-width: 991px) {
   /* Fix We Bet (Myths) Grid */
@@ -3326,8 +3327,72 @@ a.cd-value:hover { color: var(--accent); }
   }
 }
 
-/* Specific Mobile Fixes requested by user (Calendly height, Collab) */
+/* Specific Mobile Fixes requested by user (Hero redesign, Calendly height, Collab) */
 @media (max-width: 991px) {
+  
+  /* --- HERO SECTION --- */
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .hero-cards-left, .hero-cards-right {
+    display: none !important; /* Hide the wrappers since cards are moved via JS */
+  }
+  
+  .hero-center {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  /* Text placements */
+  .experts-row { margin-bottom: 15px; }
+  .hero-headline { text-align: center !important; width: 100%; }
+  .hero-sub { margin-bottom: 30px; text-align: center !important; width: 100%; }
+  .hero-mobile-logo-wrapper { display: none !important; }
+  
+  /* The Cards Wrapper (Created via JS) */
+  .mobile-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  /* The Cards */
+  .pcard-1 {
+    transform: rotate(-6deg) !important;
+    transform-origin: center right !important;
+    margin-right: -10px !important;
+    z-index: 2;
+  }
+  
+  .pcard-3 {
+    transform: rotate(6deg) !important;
+    transform-origin: center left !important;
+    margin-left: -10px !important;
+    margin-top: 35px !important; /* Move right card down slightly to match overlap */
+    z-index: 1;
+  }
+  
+  /* Make cards HUGE on mobile to match screenshot */
+  .pcard-1 .video-aspect, .pcard-3 .video-aspect {
+    width: 44vw !important;
+    max-width: 200px !important;
+  }
+  
+  /* The CTA */
+  .hero-cta-group {
+    margin-top: 10px !important;
+    justify-content: center !important;
+    width: 100%;
+    display: flex !important;
+  }
   
   /* --- COLLABORATION SECTION --- */
   .partners-info {
