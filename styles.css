@@ -3196,3 +3196,12 @@ a.cd-value:hover { color: var(--accent); }
     margin-top: 0 !important; /* Override inline styles if any */
   }
 }
+
+/* --- Killswitch for Hero Cards on Mobile/Tablet --- */
+@media (max-width: 991px) {
+  .hero-cards-left, 
+  .hero-cards-right, 
+  .mobile-cards-wrapper { 
+    display: none !important; 
+  }
+}
