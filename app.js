@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideoControls();
   initReels();
   initServiceCardTouch();
+  initVideoModal();
+  initOrbitCards();
 });
 
 /* ──────────────────────────────────────────────────────────
@@ -76,6 +78,20 @@ function initNav() {
   }, { threshold: 0.3 });
 
   sections.forEach(s => io.observe(s));
+
+  /* Smooth scroll click handler for desktop nav links */
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          e.preventDefault();
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -286,75 +302,164 @@ function initProgressBar() {
    10. HERO UGC VIDEO INTERACTION CONTROLS
    ────────────────────────────────────────────────────────── */
 function initHeroVideoControls() {
-  const video = document.getElementById('heroUgcVideo');
-  const playBtn = document.getElementById('videoPlayBtn');
-  const playIcon = document.getElementById('playIcon');
-  const muteBtn = document.getElementById('videoMuteBtn');
-  const muteIcon = document.getElementById('muteIcon');
-  const bars = document.getElementById('videoBars');
+  // Helper function to wire up a video card
+  function setupVideoCard(videoEl, playBtnEl, playIconEl, muteBtnEl, muteIconEl, barsEl, uploadBtnEl, inputEl) {
+    if (!videoEl) return;
 
-  if (!video) return;
+    const isVimeo = videoEl.tagName === 'IFRAME';
+    const player = isVimeo && typeof Vimeo !== 'undefined' ? new Vimeo.Player(videoEl) : null;
 
-  // Toggle play/pause when clicking the video card or play button
-  function togglePlay() {
-    if (video.paused) {
-      video.play().catch(err => console.log('Video play failed:', err));
-      if (bars) bars.classList.remove('paused');
-      if (playIcon) {
-        // Change play icon to pause icon
-        playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    function togglePlay() {
+      if (isVimeo && player) {
+        player.getPaused().then(paused => {
+          if (paused) {
+            player.play().catch(err => console.log('Vimeo play failed:', err));
+            if (barsEl) barsEl.classList.remove('paused');
+            if (playIconEl) {
+              playIconEl.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+            }
+          } else {
+            player.pause().catch(err => console.log('Vimeo pause failed:', err));
+            if (barsEl) barsEl.classList.add('paused');
+            if (playIconEl) {
+              playIconEl.innerHTML = '<path d="M5 3l14 9-14 9V3z"/>';
+            }
+          }
+        });
+      } else {
+        if (videoEl.paused) {
+          videoEl.play().catch(err => console.log('Video play failed:', err));
+          if (barsEl) barsEl.classList.remove('paused');
+          if (playIconEl) {
+            playIconEl.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+          }
+        } else {
+          videoEl.pause();
+          if (barsEl) barsEl.classList.add('paused');
+          if (playIconEl) {
+            playIconEl.innerHTML = '<path d="M5 3l14 9-14 9V3z"/>';
+          }
+        }
       }
-    } else {
-      video.pause();
-      if (bars) bars.classList.add('paused');
-      if (playIcon) {
-        // Change play icon back to play icon
-        playIcon.innerHTML = '<path d="M5 3l14 9-14 9V3z"/>';
+    }
+
+    function toggleMute(e) {
+      if (e) e.stopPropagation();
+      if (isVimeo && player) {
+        player.getMuted().then(muted => {
+          const nextMuted = !muted;
+          player.setMuted(nextMuted);
+          if (nextMuted) {
+            if (muteIconEl) muteIconEl.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>';
+          } else {
+            if (muteIconEl) muteIconEl.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/>';
+          }
+        });
+      } else {
+        videoEl.muted = !videoEl.muted;
+        if (videoEl.muted) {
+          if (muteIconEl) {
+            muteIconEl.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>';
+          }
+        } else {
+          if (muteIconEl) {
+            muteIconEl.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/>';
+          }
+        }
+      }
+    }
+
+    if (playBtnEl) playBtnEl.addEventListener('click', togglePlay);
+    if (muteBtnEl) muteBtnEl.addEventListener('click', toggleMute);
+
+    const mockContainer = videoEl.parentElement;
+    if (mockContainer) {
+      mockContainer.addEventListener('click', (e) => {
+        if (e.target.closest('.video-play') || e.target.closest('.video-mute') || e.target.closest('.video-upload-btn')) return;
+        togglePlay();
+      });
+    }
+
+    if (uploadBtnEl && inputEl) {
+      uploadBtnEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        inputEl.click();
+      });
+      inputEl.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const fileURL = URL.createObjectURL(file);
+          
+          let activeVideo = videoEl;
+          if (videoEl.tagName === 'IFRAME') {
+            activeVideo = document.createElement('video');
+            activeVideo.id = videoEl.id;
+            activeVideo.className = videoEl.className;
+            activeVideo.autoplay = true;
+            activeVideo.loop = true;
+            activeVideo.muted = true;
+            activeVideo.playsInline = true;
+            
+            videoEl.parentNode.replaceChild(activeVideo, videoEl);
+            
+            // Re-setup with the new video element
+            setupVideoCard(activeVideo, playBtnEl, playIconEl, muteBtnEl, muteIconEl, barsEl, uploadBtnEl, inputEl);
+            activeVideo.src = fileURL;
+            activeVideo.load();
+            activeVideo.play().catch(err => console.log('Video play failed:', err));
+            if (barsEl) barsEl.classList.remove('paused');
+            if (playIconEl) {
+              playIconEl.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+            }
+            return;
+          }
+          
+          videoEl.src = fileURL;
+          videoEl.load();
+          videoEl.play().catch(err => console.log('Video play failed:', err));
+          if (barsEl) barsEl.classList.remove('paused');
+          if (playIconEl) {
+            playIconEl.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+          }
+        }
+      });
+    }
+
+    if (videoEl.autoplay || isVimeo) {
+      if (barsEl) barsEl.classList.remove('paused');
+      if (playIconEl) {
+        playIconEl.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
       }
     }
   }
 
-  // Toggle mute/unmute
-  function toggleMute(e) {
-    if (e) e.stopPropagation(); // Avoid triggering card play toggle
-    video.muted = !video.muted;
-    if (video.muted) {
-      if (muteIcon) {
-        // Muted: show speaker box + cross icon (no sound waves)
-        muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>';
-      }
-    } else {
-      if (muteIcon) {
-        // Unmuted: show speaker box + sound waves
-        muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/>';
-      }
-    }
-  }
+  // Setup Left Card
+  setupVideoCard(
+    document.getElementById('heroUgcVideo'),
+    null,
+    null,
+    document.getElementById('videoMuteBtn'),
+    document.getElementById('muteIcon'),
+    document.getElementById('videoBars'),
+    document.getElementById('videoUploadBtnLeft'),
+    document.getElementById('videoInputLeft')
+  );
 
-  if (playBtn) playBtn.addEventListener('click', togglePlay);
-  if (muteBtn) muteBtn.addEventListener('click', toggleMute);
-
-  // Click on the mock container also toggles play/pause
-  const mockContainer = video.parentElement;
-  if (mockContainer) {
-    mockContainer.addEventListener('click', (e) => {
-      // Prevent double trigger if clicking directly on buttons
-      if (e.target.closest('#videoPlayBtn') || e.target.closest('#videoMuteBtn')) return;
-      togglePlay();
-    });
-  }
-
-  // Synchronize initial UI state (default muted and playing)
-  if (video.autoplay) {
-    if (bars) bars.classList.remove('paused');
-    if (playIcon) {
-      playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-    }
-  }
+  // Setup Right Card
+  setupVideoCard(
+    document.getElementById('heroUgcVideoRight'),
+    null,
+    null,
+    null,
+    null,
+    document.getElementById('videoBarsRight'),
+    document.getElementById('videoUploadBtnRight'),
+    document.getElementById('videoInputRight')
+  );
 }
 
 /* ──────────────────────────────────────────────────────────
-   11. REELS — infinite marquee + hover play
+   11. REELS — infinite marquee + hover play + click modal
 ────────────────────────────────────────────────────────── */
 function initReels() {
   const wrap  = document.querySelector('.reels-track-wrap');
@@ -362,13 +467,13 @@ function initReels() {
   const inner = document.querySelector('.reels-inner');
   if (!wrap || !track || !inner) return;
 
-  /* Clone the set of cards once inside the reels-marquee-track wrapper */
+  /* Clone the original card set and append for seamless loop */
   const clone = inner.cloneNode(true);
   clone.setAttribute('aria-hidden', 'true');
   track.appendChild(clone);
 
-  /* Hover play / pause for cards that have a real Vimeo iframe */
-  wrap.querySelectorAll('.reel-frame').forEach(frame => {
+  /* Hover play / pause for all frames (original + cloned) */
+  track.querySelectorAll('.reel-frame').forEach(frame => {
     const iframe = frame.querySelector('.reel-video');
     if (!iframe) return;
 
@@ -376,16 +481,12 @@ function initReels() {
     if (src && src.includes('vimeo.com')) {
       frame.classList.add('has-video');
 
-      // Initialize Vimeo Player
       const player = typeof Vimeo !== 'undefined' ? new Vimeo.Player(iframe) : null;
       if (player) {
         iframe.vimeoPlayer = player;
-        
-        // Pause immediately since background=1 autoplays by default
         player.pause().catch(() => {});
 
         frame.addEventListener('mouseenter', () => {
-          if (!frame.classList.contains('has-video')) return;
           player.play().catch(err => console.log('Vimeo play error:', err));
         });
 
@@ -393,16 +494,10 @@ function initReels() {
           player.pause().catch(() => {});
         });
 
-        /* Touch/Click: tap to toggle */
+        /* Click: open fullscreen modal preview */
         frame.addEventListener('click', () => {
           if (!frame.classList.contains('has-video')) return;
-          player.getPaused().then(paused => {
-            if (paused) {
-              player.play().catch(() => {});
-            } else {
-              player.pause().catch(() => {});
-            }
-          }).catch(() => {});
+          openVideoModal(src, frame);
         });
       }
     }
@@ -413,15 +508,14 @@ function initReels() {
   if (section) {
     new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) {
-        wrap.querySelectorAll('.reel-video').forEach(iframe => {
-          if (iframe.vimeoPlayer) {
-            iframe.vimeoPlayer.pause().catch(() => {});
-          }
+        track.querySelectorAll('.reel-video').forEach(iv => {
+          if (iv.vimeoPlayer) iv.vimeoPlayer.pause().catch(() => {});
         });
       }
     }, { threshold: 0 }).observe(section);
   }
 }
+
 
 /* ──────────────────────────────────────────────────────────
    TOUCH SUPPORT — Service Card Flip
@@ -446,5 +540,92 @@ function initServiceCardTouch() {
     if (!e.target.closest('.svc-card')) {
       document.querySelectorAll('.svc-card').forEach(c => c.classList.remove('flipped'));
     }
+  });
+}
+
+/* ──────────────────────────────────────────────────────────
+   VIDEO PREVIEW MODAL
+   Opens a fullscreen portrait modal when a reel card is clicked
+────────────────────────────────────────────────────────── */
+function initVideoModal() {
+  const overlay   = document.getElementById('videoModal');
+  const iframe    = document.getElementById('videoModalIframe');
+  const closeBtn  = document.getElementById('videoModalClose');
+  const label     = document.getElementById('videoModalLabel');
+  if (!overlay || !iframe) return;
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    /* Stop video by blanking src, then restore after transition */
+    setTimeout(() => { iframe.src = ''; }, 350);
+  }
+
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+
+  /* Close on backdrop click (outside container) */
+  overlay.addEventListener('click', e => {
+    if (!e.target.closest('.vmodal-container')) closeModal();
+  });
+
+  /* Close on Escape */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  /* Expose opener globally so initReels can call it */
+  window.openVideoModal = function(backgroundSrc, frame) {
+    /* Extract Vimeo video ID from the background=1 src */
+    const match = backgroundSrc && backgroundSrc.match(/vimeo\.com\/video\/([0-9]+)/);
+    if (!match) return;
+    const videoId = match[1];
+
+    /* Get the reel label (e.g. "Reel 01") */
+    const reelLabel = frame && frame.querySelector('.reel-label');
+    if (label) label.textContent = reelLabel ? reelLabel.textContent : '';
+
+    /* Build autoplay src with sound */
+    const modalSrc = `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=0&loop=0&controls=1&title=0&byline=0&portrait=0`;
+    iframe.src = modalSrc;
+
+    /* Pause all inline card players while modal is open */
+    document.querySelectorAll('.reel-video').forEach(iv => {
+      if (iv.vimeoPlayer) iv.vimeoPlayer.pause().catch(() => {});
+    });
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+}
+/* ──────────────────────────────────────────────────────────
+   ORBIT CARD CLICKS — Brand & Creator Logo Video Previews
+   Clicking any .creator-card or .brand-card opens the video modal
+────────────────────────────────────────────────────────── */
+function initOrbitCards() {
+  const orbitSection = document.querySelector('.partners-circle-section');
+  if (!orbitSection) return;
+
+  const cards = orbitSection.querySelectorAll('.creator-card[data-video-id], .brand-card[data-video-id]');
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      e.stopPropagation(); // prevent bubbling into the orbit container
+      const videoId = card.dataset.videoId;
+      const label   = card.dataset.label || '';
+      if (!videoId) return;
+
+      // Build a synthetic Vimeo background src so openVideoModal can extract the ID
+      const syntheticSrc = `https://player.vimeo.com/video/${videoId}?background=1`;
+
+      // Create a fake frame element carrying the label so the modal shows it
+      const fakeFrame = { querySelector: selector => {
+        if (selector === '.reel-label') return { textContent: label };
+        return null;
+      }};
+
+      if (typeof window.openVideoModal === 'function') {
+        window.openVideoModal(syntheticSrc, fakeFrame);
+      }
+    });
   });
 }

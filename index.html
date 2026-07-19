@@ -6,8 +6,8 @@
   <title>Motion Labs</title>
   <meta name="description" content="Scale your brand with India's Top UGC & Social Media Marketing agency. Psychology-driven content, 3000+ creators, proven results.">
   <meta name="keywords" content="UGC marketing, social media marketing, D2C brands India, content creators, Meta ads, Instagram marketing">
-  <link rel="icon" href="assets/MotionLabs.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/MotionLabs.png">
+  <link rel="icon" href="assets/White%20logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/White%20logo.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link active">Home</a></li>
         <li class="has-dropdown">
-          <span class="nav-link">Services</span>
+          <a href="#services" class="nav-link">Services</a>
           <div class="dropdown-panel">
             <a href="#services">Content Shoot</a>
             <a href="#services">Product Shoot</a>
@@ -44,9 +44,9 @@
             <a href="#services">Website Development</a>
           </div>
         </li>
-        <li><a href="#portfolio" class="nav-link">Case Studies</a></li>
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#blog" class="nav-link">Blogs</a></li>
+        <li><a href="#partners" class="nav-link">Collaborations</a></li>
+        <li><a href="#showcase" class="nav-link">Works</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
       <a href="#contact" class="nav-cta" id="navCta">
@@ -69,9 +69,8 @@
     <div class="mobile-menu-inner">
       <a href="#hero" class="mob-link">Home</a>
       <a href="#services" class="mob-link">Services</a>
-      <a href="#portfolio" class="mob-link">Case Studies</a>
-      <a href="#about" class="mob-link">About Us</a>
-      <a href="#blog" class="mob-link">Blogs</a>
+      <a href="#partners" class="mob-link">Collaborations</a>
+      <a href="#showcase" class="mob-link">Works</a>
       <a href="#contact" class="mob-link mob-cta">Contact Us →</a>
     </div>
   </div>
@@ -99,10 +98,7 @@
         <div class="pcard pcard-1 tilt-left">
           <div class="pcard-media video-aspect">
             <div class="video-mock">
-              <video id="heroUgcVideo" class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_220,h_390/guy_woman_mobile.mp4"></video>
-              <div class="video-play" id="videoPlayBtn">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" id="playIcon"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
+              <iframe id="heroUgcVideo" class="card-video" src="https://player.vimeo.com/video/1211179866?autoplay=1&loop=1&muted=1&controls=0&autopause=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
               <div class="video-bars" id="videoBars">
                 <span></span><span></span><span></span><span></span><span></span><span></span>
               </div>
@@ -111,6 +107,12 @@
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" id="muteIcon">
                   <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
                 </svg>
+              </div>
+              <div class="video-upload-btn" id="videoUploadBtnLeft" title="Choose Local Video">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                </svg>
+                <input type="file" accept="video/*" id="videoInputLeft" style="display:none;">
               </div>
             </div>
           </div>
@@ -121,19 +123,19 @@
 
         <!-- Small Cards Row Left -->
         <div class="pcard-row row-left">
-          <!-- Small Card Left 1: Homesick -->
+          <!-- Small Card Left 1: Paytm -->
           <div class="pcard pcard-small tilt-left">
             <div class="pcard-media square-aspect">
               <div class="img-mock">
-                <img src="assets/case_study_1.png" alt="Homesick" class="card-image">
+                <img src="assets/Hero%20Section%20Logos/Paytm.png" alt="Paytm" class="card-image">
               </div>
             </div>
           </div>
-          <!-- Small Card Left 2: Billboard -->
+          <!-- Small Card Left 2: SriMandir -->
           <div class="pcard pcard-small tilt-right">
             <div class="pcard-media square-aspect">
               <div class="img-mock">
-                <img src="assets/case_study_2.png" alt="Billboard" class="card-image">
+                <img src="assets/Hero%20Section%20Logos/SriMandir.png" alt="SriMandir" class="card-image">
               </div>
             </div>
           </div>
@@ -237,14 +239,17 @@
         <div class="pcard pcard-3 tilt-right">
           <div class="pcard-media video-aspect">
             <div class="video-mock">
-              <video class="card-video" autoplay loop muted playsinline src="https://res.cloudinary.com/demo/video/upload/c_fill,w_220,h_390/docs/walking_talking.mp4"></video>
-              <div class="video-play">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
-              <div class="video-bars">
+              <iframe id="heroUgcVideoRight" class="card-video" src="https://player.vimeo.com/video/1211179867?autoplay=1&loop=1&muted=1&controls=0&autopause=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+              <div class="video-bars" id="videoBarsRight">
                 <span></span><span></span><span></span><span></span><span></span><span></span>
               </div>
               <div class="video-badge">UGC AD</div>
+              <div class="video-upload-btn" id="videoUploadBtnRight" title="Choose Local Video">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                </svg>
+                <input type="file" accept="video/*" id="videoInputRight" style="display:none;">
+              </div>
             </div>
           </div>
           <div class="sparkle sparkle-tr">
@@ -254,23 +259,19 @@
 
         <!-- Small Cards Row Right -->
         <div class="pcard-row row-right">
-          <!-- Small Card Right 1: Tinder Bios -->
+          <!-- Small Card Right 1: Equal AI -->
           <div class="pcard pcard-small tilt-left">
             <div class="pcard-media square-aspect">
-              <div class="img-mock tinder-card-mock">
-                <div class="tinder-card-content">
-                  <div class="tinder-text-white">If Snacks had</div>
-                  <div class="tinder-text-white">TINDER</div>
-                  <div class="tinder-text-white">BIOS...</div>
-                </div>
+              <div class="img-mock">
+                <img src="assets/Hero%20Section%20Logos/Equal%20AI.png" alt="Equal AI" class="card-image">
               </div>
             </div>
           </div>
-          <!-- Small Card Right 2: Patio Mockup -->
+          <!-- Small Card Right 2: Stratt -->
           <div class="pcard pcard-small tilt-right">
             <div class="pcard-media square-aspect">
               <div class="img-mock">
-                <img src="assets/case_study_3.png" alt="Patio Mockup" class="card-image">
+                <img src="assets/Hero%20Section%20Logos/Stratt.png" alt="Stratt" class="card-image">
               </div>
             </div>
           </div>
@@ -370,8 +371,7 @@
           <span class="section-tag">COLLABORATION ENGINE</span>
           <h2 class="section-h2">Connecting Brands<br>with <span class="text-green">Creators.</span></h2>
           <p class="section-sub">
-            We bridge India's premium D2C brands with our elite network of 3,000+ creators. Our dual-orbit engine fuels a continuous loop of organic trust, high-converting content, and performance scaling.
-          </p>
+            We bridge India's top D2C brands with 3,000+ elite creators to build content that converts. Each logo orbiting on the right? <strong>That's a collab we've made happen.</strong>
           <div class="partners-metrics">
             <div class="partner-metric">
               <span class="pm-value">100+</span>
@@ -397,7 +397,7 @@
           <div class="circles-container">
             <!-- Center Core -->
             <div class="circles-core">
-              <img src="assets/MotionLabs.png" alt="Motion Labs" class="core-logo-img">
+              <img src="assets/White%20logo.png" alt="Motion Labs" class="core-logo-img">
               <span class="core-pulse"></span>
             </div>
 
@@ -408,70 +408,52 @@
               
               <!-- Rotating Container (CCW) -->
               <div class="inner-rotate-container">
-                <!-- 6 Creator Avatars -->
+                <!-- 4 Unique Creators, evenly spaced at 90° -->
                 <!-- Creator 1: Raj Shamni -->
                 <div class="orbit-item" style="--angle: 0deg; --radius: var(--inner-radius);">
                   <div class="item-content inner-content">
-                    <div class="creator-card">
+                    <div class="creator-card" data-video-id="1208454519" data-label="Raj Shamni × Motion Labs">
                       <div class="creator-avatar-circle">
                         <img src="assets/Creators/Raj Shamni.webp" alt="Raj Shamni" class="creator-avatar-img">
                       </div>
                       <span class="creator-name-label">Raj Shamni</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Creator 2: Dear Sir -->
-                <div class="orbit-item" style="--angle: 60deg; --radius: var(--inner-radius);">
+                <div class="orbit-item" style="--angle: 90deg; --radius: var(--inner-radius);">
                   <div class="item-content inner-content">
-                    <div class="creator-card">
+                    <div class="creator-card" data-video-id="1208453399" data-label="Dear Sir × Motion Labs">
                       <div class="creator-avatar-circle">
                         <img src="assets/Creators/Dear Sir.webp" alt="Dear Sir" class="creator-avatar-img">
                       </div>
                       <span class="creator-name-label">Dear Sir</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Creator 3: Nakul Mehta -->
-                <div class="orbit-item" style="--angle: 120deg; --radius: var(--inner-radius);">
+                <div class="orbit-item" style="--angle: 180deg; --radius: var(--inner-radius);">
                   <div class="item-content inner-content">
-                    <div class="creator-card">
+                    <div class="creator-card" data-video-id="1208453347" data-label="Nakul Mehta × Motion Labs">
                       <div class="creator-avatar-circle">
                         <img src="assets/Creators/Nakul Mehta.webp" alt="Nakul Mehta" class="creator-avatar-img">
                       </div>
                       <span class="creator-name-label">Nakul Mehta</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Creator 4: Thugesh -->
-                <div class="orbit-item" style="--angle: 180deg; --radius: var(--inner-radius);">
+                <div class="orbit-item" style="--angle: 270deg; --radius: var(--inner-radius);">
                   <div class="item-content inner-content">
-                    <div class="creator-card">
+                    <div class="creator-card" data-video-id="1208454408" data-label="Thugesh × Motion Labs">
                       <div class="creator-avatar-circle">
                         <img src="assets/Creators/Thugesh.webp" alt="Thugesh" class="creator-avatar-img">
                       </div>
                       <span class="creator-name-label">Thugesh</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Creator 5: Raj Shamni -->
-                <div class="orbit-item" style="--angle: 240deg; --radius: var(--inner-radius);">
-                  <div class="item-content inner-content">
-                    <div class="creator-card">
-                      <div class="creator-avatar-circle">
-                        <img src="assets/Creators/Raj Shamni.webp" alt="Raj Shamni" class="creator-avatar-img">
-                      </div>
-                      <span class="creator-name-label">Raj Shamni</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Creator 6: Thugesh -->
-                <div class="orbit-item" style="--angle: 300deg; --radius: var(--inner-radius);">
-                  <div class="item-content inner-content">
-                    <div class="creator-card">
-                      <div class="creator-avatar-circle">
-                        <img src="assets/Creators/Thugesh.webp" alt="Thugesh" class="creator-avatar-img">
-                      </div>
-                      <span class="creator-name-label">Thugesh</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
@@ -485,92 +467,52 @@
               
               <!-- Rotating Container (CW) -->
               <div class="outer-rotate-container">
-                <!-- 8 Brand Badges with Logos -->
+                <!-- 4 Unique Brands, evenly spaced at 90° -->
                 <!-- Brand 1: Paytm -->
                 <div class="orbit-item" style="--angle: 0deg; --radius: var(--outer-radius);">
                   <div class="item-content outer-content">
-                    <div class="brand-card">
+                    <div class="brand-card" data-video-id="1211179868" data-label="Paytm × Motion Labs">
                       <div class="brand-logo-circle">
                         <img src="assets/Brand logos/Paytm.webp" alt="Paytm" class="brand-logo-img">
                       </div>
                       <span class="brand-logo-name">Paytm</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Brand 2: Equal AI -->
-                <div class="orbit-item" style="--angle: 45deg; --radius: var(--outer-radius);">
+                <div class="orbit-item" style="--angle: 90deg; --radius: var(--outer-radius);">
                   <div class="item-content outer-content">
-                    <div class="brand-card">
+                    <div class="brand-card" data-video-id="1211179867" data-label="Equal AI × Motion Labs">
                       <div class="brand-logo-circle">
                         <img src="assets/Brand logos/Equal AI.webp" alt="Equal AI" class="brand-logo-img">
                       </div>
                       <span class="brand-logo-name">Equal AI</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Brand 3: Sri Mandir -->
-                <div class="orbit-item" style="--angle: 90deg; --radius: var(--outer-radius);">
+                <div class="orbit-item" style="--angle: 180deg; --radius: var(--outer-radius);">
                   <div class="item-content outer-content">
-                    <div class="brand-card">
+                    <div class="brand-card" data-video-id="1211179866" data-label="Sri Mandir × Motion Labs">
                       <div class="brand-logo-circle">
                         <img src="assets/Brand logos/Sri Mandir.webp" alt="Sri Mandir" class="brand-logo-img">
                       </div>
                       <span class="brand-logo-name">Sri Mandir</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
                 <!-- Brand 4: Startt -->
-                <div class="orbit-item" style="--angle: 135deg; --radius: var(--outer-radius);">
-                  <div class="item-content outer-content">
-                    <div class="brand-card">
-                      <div class="brand-logo-circle">
-                        <img src="assets/Brand logos/Startt.webp" alt="Startt" class="brand-logo-img">
-                      </div>
-                      <span class="brand-logo-name">Startt</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Brand 5: Paytm -->
-                <div class="orbit-item" style="--angle: 180deg; --radius: var(--outer-radius);">
-                  <div class="item-content outer-content">
-                    <div class="brand-card">
-                      <div class="brand-logo-circle">
-                        <img src="assets/Brand logos/Paytm.webp" alt="Paytm" class="brand-logo-img">
-                      </div>
-                      <span class="brand-logo-name">Paytm</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Brand 6: Equal AI -->
-                <div class="orbit-item" style="--angle: 225deg; --radius: var(--outer-radius);">
-                  <div class="item-content outer-content">
-                    <div class="brand-card">
-                      <div class="brand-logo-circle">
-                        <img src="assets/Brand logos/Equal AI.webp" alt="Equal AI" class="brand-logo-img">
-                      </div>
-                      <span class="brand-logo-name">Equal AI</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Brand 7: Sri Mandir -->
                 <div class="orbit-item" style="--angle: 270deg; --radius: var(--outer-radius);">
                   <div class="item-content outer-content">
-                    <div class="brand-card">
-                      <div class="brand-logo-circle">
-                        <img src="assets/Brand logos/Sri Mandir.webp" alt="Sri Mandir" class="brand-logo-img">
-                      </div>
-                      <span class="brand-logo-name">Sri Mandir</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Brand 8: Startt -->
-                <div class="orbit-item" style="--angle: 315deg; --radius: var(--outer-radius);">
-                  <div class="item-content outer-content">
-                    <div class="brand-card">
+                    <div class="brand-card" data-video-id="1211178926" data-label="Startt × Motion Labs">
                       <div class="brand-logo-circle">
                         <img src="assets/Brand logos/Startt.webp" alt="Startt" class="brand-logo-img">
                       </div>
                       <span class="brand-logo-name">Startt</span>
+                      <span class="orbit-play-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg></span>
                     </div>
                   </div>
                 </div>
@@ -964,48 +906,6 @@
   <!-- ======================================================
        ABOUT / PROCESS
   ====================================================== -->
-  <section class="about-section" id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-left reveal">
-          <span class="section-tag">04 PROCESS</span>
-          <h2 class="section-h2">From Brief<br>to <span class="text-green">Viral.</span></h2>
-          <p class="about-desc">A battle-tested 4-step engine that takes your brand from obscurity to omnipresence in 90 days or less.</p>
-          <a href="#contact" class="btn-primary mt-8">Start Your Growth</a>
-        </div>
-        <div class="about-right">
-          <div class="process-step-card reveal">
-            <div class="ps-num">01</div>
-            <div class="ps-content">
-              <h4>Discovery & Brand Audit</h4>
-              <p>We dissect your brand's identity, competitors, and current social presence to define exactly where you need to go.</p>
-            </div>
-          </div>
-          <div class="process-step-card reveal">
-            <div class="ps-num">02</div>
-            <div class="ps-content">
-              <h4>Strategy & Creator Briefing</h4>
-              <p>We map a full content calendar, identify psychological hooks, and select creators from our 3,000+ roster with precision.</p>
-            </div>
-          </div>
-          <div class="process-step-card reveal">
-            <div class="ps-num">03</div>
-            <div class="ps-content">
-              <h4>Content Production & QC</h4>
-              <p>Every asset is reviewed for hook strength, visual clarity, and platform formatting before a single frame goes live.</p>
-            </div>
-          </div>
-          <div class="process-step-card reveal">
-            <div class="ps-num">04</div>
-            <div class="ps-content">
-              <h4>Launch, Analyse & Scale</h4>
-              <p>We deploy content, A/B test creatives, and double down on what's working — creating a compounding growth flywheel.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   
   <!-- ======================================================
@@ -1562,7 +1462,7 @@
 
           <div class="contact-detail">
             <span class="cd-label">EMAIL US</span>
-            <a href="mailto:grow@sup.agency" class="cd-value">support@motionlabswork.com</a>
+            <a href="mailto:support@motionlabswork.com" class="cd-value">support@motionlabswork.com</a>
           </div>
           <div class="contact-detail">
             <span class="cd-label">WHATSAPP</span>
@@ -1707,7 +1607,7 @@
             <a href="https://wa.me/918178061034" target="_blank" aria-label="WhatsApp" class="fsocial">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.004 2c-5.518 0-9.986 4.469-9.986 9.987 0 1.762.459 3.483 1.332 5.004L2 22l5.143-1.349c1.472.803 3.127 1.226 4.856 1.226 5.517 0 9.985-4.47 9.985-9.987C21.984 6.469 17.52 2 12.004 2zm6.262 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
             </a>
-            <a href="#" target="_blank" aria-label="LinkedIn" class="fsocial">
+            <a href="https://www.linkedin.com/in/motion-labs-26623b418" target="_blank" aria-label="LinkedIn" class="fsocial">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.33V9h3.42v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.45v6.3z"/></svg>
             </a>
           </div>
@@ -1717,7 +1617,9 @@
           <span class="footer-col-title">Navigation</span>
           <a href="#hero" class="footer-link">Home</a>
           <a href="#services" class="footer-link">Services</a>
-          <a href="#about" class="footer-link">About Us</a>
+          <a href="#partners" class="footer-link">Collaborations</a>
+          <a href="#showcase" class="footer-link">Works</a>
+          <a href="#contact" class="footer-link">Contact</a>
         </div>
 
         <div class="footer-col">
@@ -1732,7 +1634,7 @@
 
         <div class="footer-col">
           <span class="footer-col-title">Contact</span>
-          <a href="mailto:grow@sup.agency" class="footer-link">support@motionlabswork.com</a>
+          <a href="mailto:support@motionlabswork.com" class="footer-link">support@motionlabswork.com</a>
           <a href="https://wa.me/918178061034" target="_blank" class="footer-link">+91 8178061034</a>
           <a href="#contact" class="footer-link footer-cta-link">Book a Call →</a>
         </div>
@@ -1744,6 +1646,31 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================================================
+       VIDEO PREVIEW MODAL
+  ====================================================== -->
+  <div class="vmodal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Video Preview">
+    <div class="vmodal-container">
+      <button class="vmodal-close" id="videoModalClose" aria-label="Close video">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="vmodal-frame">
+        <iframe
+          id="videoModalIframe"
+          class="vmodal-iframe"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Reel Preview"
+          src="">
+        </iframe>
+      </div>
+      <div class="vmodal-label" id="videoModalLabel"></div>
+    </div>
+  </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="app.js"></script>
