@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css?v=26">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -46,10 +47,10 @@
         </li>
         <li><a href="#partners" class="nav-link">Collaborations</a></li>
         <li><a href="#showcase" class="nav-link">Works</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="nav-link">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="nav-cta" id="navCta">
+      <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="nav-cta" id="navCta">
         <span>Contact Us</span>
         <div class="cta-arrow">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -71,7 +72,7 @@
       <a href="#services" class="mob-link">Services</a>
       <a href="#partners" class="mob-link">Collaborations</a>
       <a href="#showcase" class="mob-link">Works</a>
-      <a href="#contact" class="mob-link mob-cta">Contact Us →</a>
+      <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="mob-link mob-cta">Contact Us →</a>
     </div>
   </div>
 
@@ -89,6 +90,127 @@
   <!-- ======================================================
        HERO SECTION
   ====================================================== -->
+  
+  <!-- ======================================================
+       MOBILE EXCLUSIVE HERO SECTION (BULLETPROOF)
+  ====================================================== -->
+  <section class="hero hero-mobile-only" id="hero-mobile">
+    <div class="hero-mobile-inner">
+      <div class="experts-row fade-in">
+          <span class="experts-label">Experts in</span>
+          <div class="experts-logos">
+            <!-- Meta (Facebook) -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#0064E0">
+              <path d="M18.82 10.37c-.77-1.12-1.89-1.81-3.15-1.92-1.32-.12-2.55.35-3.48 1.25a6.4 6.4 0 0 0-3.48-1.25c-1.26.11-2.38.8-3.15 1.92a4.46 4.46 0 0 0-.66 3.67 4.14 4.14 0 0 0 2.27 2.68c1.17.58 2.5.54 3.67-.1a7.48 7.48 0 0 0 1.35-1.02c.48.51.98.87 1.35 1.02 1.17.64 2.5.68 3.67.1 1-.5 1.83-1.42 2.27-2.68a4.46 4.46 0 0 0-.66-3.67zm-9.35 3.52c-.6.42-1.36.4-1.93-.05a1.86 1.86 0 0 1-.84-1.38c-.08-.66.21-1.28.77-1.6.43-.25.95-.3 1.45-.14a3.86 3.86 0 0 1 1.7 1.12c-.28.37-.66.73-1.15 2.05zm6.8-.05c-.57.45-1.33.47-1.93.05-.49-1.32-.87-1.68-1.15-2.05a3.86 3.86 0 0 1 1.7-1.12c.5-.16 1.02-.1 1.45.14.56.32.85.94.77 1.6a1.86 1.86 0 0 1-.84 1.38z"/>
+            </svg>
+            <!-- Instagram -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E1306C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <!-- LinkedIn -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#0077B5">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <!-- YouTube -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+        </div>
+      <h1 class="hero-headline fade-in delay-1">
+          Don't just
+          <span class="get-word-wrapper">Get <span class="get-g-sparkle"></span></span>
+          <br>
+          <span class="viewed-line">
+            Viewed
+            <span class="inline-avatars">
+              <span class="iavatar" style="z-index:1; animation-delay:0.20s">
+                <img src="assets/Creators/Thugesh.webp" alt="Thugesh" class="iavatar-img">
+              </span>
+              <span class="iavatar" style="z-index:2; animation-delay:0.34s">
+                <img src="assets/Creators/Raj Shamni.webp" alt="Raj Shamni" class="iavatar-img">
+              </span>
+              <span class="iavatar" style="z-index:3; animation-delay:0.48s">
+                <img src="assets/Brand logos/Paytm.webp" alt="Paytm" class="iavatar-img">
+              </span>
+              <span class="iavatar" style="z-index:4; animation-delay:0.62s">
+                <img src="assets/Brand logos/Sri Mandir.webp" alt="Sri Mandir" class="iavatar-img">
+              </span>
+              <span class="iavatar" style="z-index:5; animation-delay:0.76s">
+                <img src="assets/Brand logos/Startt.webp" alt="Startt" class="iavatar-img">
+              </span>
+            </span>
+            get
+          </span>
+          <br>
+          <span class="highlight-loved">LOVED!!</span>
+        </h1>
+      <p class="hero-sub fade-in delay-2">
+          If you're tired of the plain, boring, repetitive content that gets ignored in less than 3 seconds, we are here to make your brand not just viewed but LOVED by your to be customers
+        </p>
+      
+      <div class="mobile-cards-container">
+        <!-- Left Card (Video) -->
+        <div class="pcard tilt-left mobile-pcard">
+          <div class="pcard-media video-aspect">
+            <div class="video-mock">
+              <iframe id="heroUgcVideoMobile" class="card-video" src="https://player.vimeo.com/video/1211179866?autoplay=1&loop=1&muted=1&controls=0&autopause=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+              <div class="video-bars" id="videoBarsMobile">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="video-badge">UGC AD</div>
+              <div class="video-mute" id="videoMuteBtnMobile">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" id="muteIconMobile">
+                  <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
+                </svg>
+              </div>
+              <div class="video-upload-btn" id="videoUploadBtnLeftMobile" title="Choose Local Video">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                </svg>
+                <input type="file" accept="video/*" id="videoInputLeftMobile" style="display:none;">
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tl">
+            <svg width="24" height="24" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#1A1A1A"/></svg>
+          </div>
+        </div>
+        
+        <!-- Right Card (Equal AI Image) -->
+        <div class="pcard tilt-right mobile-pcard right-card">
+          <div class="pcard-media video-aspect">
+            <div class="img-mock" style="width:100%; height:100%;">
+              <img src="assets/Hero%20Section%20Logos/Equal%20AI.png" alt="Equal AI" class="card-image" style="width:100%; height:100%; object-fit:cover; padding:0; border-radius: 10px;">
+            </div>
+            <div class="video-badge">UGC AD</div>
+            <!-- Upload btn mock to match screenshot -->
+            <div class="video-upload-btn" title="Choose Local Video">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sparkle sparkle-tr">
+            <svg width="24" height="24" viewBox="0 0 40 38" fill="none"><path d="M24.03 23.02C21.35 24.82 20.18 33.47 19.93 37.57C19.47 28.17 16.71 23.69 15.39 22.62C13.84 20.18 4.48 18.92 0 18.59C4.2 18.33 13.25 17.14 15.87 14.51C18.48 11.88 19.85 3.74 20.2 0C20.17 7.69 22.36 12.45 23.46 13.87C24.85 17.01 35.06 18.59 39.99 18.98C30.41 18.92 25.36 21.65 24.03 23.02Z" fill="#1A1A1A"/></svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-cta-group fade-in delay-3">
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-primary-pill">Get In Touch</a>
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-arrow-circle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+    </div>
+  </section>
+
   <section class="hero" id="hero">
     <div class="hero-inner">
 
@@ -218,8 +340,8 @@
 
         <!-- Dynamic Combined CTA Group -->
         <div class="hero-cta-group fade-in delay-3">
-          <a href="#contact" class="btn-primary-pill">Get In Touch</a>
-          <a href="#contact" class="btn-arrow-circle">
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-primary-pill">Get In Touch</a>
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-arrow-circle">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
@@ -318,7 +440,7 @@
 
           <p class="myths-closer">We replace the guesswork with psychology. Ready to grow?</p>
 
-          <a href="#contact" class="btn-ghost mt-6">Let's Talk</a>
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-ghost mt-6">Let's Talk</a>
         </div>
       </div>
 
@@ -372,6 +494,7 @@
           <h2 class="section-h2">Connecting Brands<br>with <span class="text-green">Creators.</span></h2>
           <p class="section-sub">
             We bridge India's top D2C brands with 3,000+ elite creators to build content that converts. Each logo orbiting on the right? <strong>That's a collab we've made happen.</strong>
+          </p>
           <div class="partners-metrics">
             <div class="partner-metric">
               <span class="pm-value">100+</span>
@@ -386,7 +509,7 @@
               <span class="pm-label">Avg. Engagement</span>
             </div>
           </div>
-          <a href="#contact" class="btn-primary mt-8">
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-primary mt-8">
             <span>Join The Flywheel</span>
             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -546,9 +669,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208454519?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 01</span>
               </div>
@@ -565,9 +685,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453399?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 02</span>
               </div>
@@ -584,9 +701,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453347?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 03</span>
               </div>
@@ -603,9 +717,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208454408?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 04</span>
               </div>
@@ -622,9 +733,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208454178?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 05</span>
               </div>
@@ -641,9 +749,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208454021?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 06</span>
               </div>
@@ -660,9 +765,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453561?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 07</span>
               </div>
@@ -679,9 +781,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453346?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 08</span>
               </div>
@@ -698,9 +797,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453344?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 09</span>
               </div>
@@ -717,9 +813,6 @@
           <div class="reel-frame">
             <iframe class="reel-video" src="https://player.vimeo.com/video/1208453345?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
             <div class="reel-overlay">
-              <div class="reel-play">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-              </div>
               <div class="reel-info">
                 <span class="reel-label">Reel 10</span>
               </div>
@@ -743,7 +836,7 @@
     <div class="section-inner">
       <div class="reels-cta reveal">
         <p class="reels-cta-text">Like what you see? Let's create scroll-stopping content for your brand.</p>
-        <a href="#contact" class="btn-primary">Start Your Campaign</a>
+        <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="btn-primary">Start Your Campaign</a>
       </div>
     </div>
   </section>
@@ -770,7 +863,7 @@
             </div>
             <div class="svc-back">
               <p>High-fidelity, psychology-driven production shoots. We script, produce, and direct high-impact video shoots optimized for social channels.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -785,7 +878,7 @@
             </div>
             <div class="svc-back">
               <p>Premium, aesthetic product shoots with professional lighting and styling that make your physical goods stand out and feel high-end.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -800,7 +893,7 @@
             </div>
             <div class="svc-back">
               <p>Polished editing styled with psychological visual hooks, retentive pacing, and conversion-optimized sound design for maximum virality.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -815,7 +908,7 @@
             </div>
             <div class="svc-back">
               <p>Transition your grid from a static portfolio to a living, storytelling brand that users naturally fall in love with.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -830,7 +923,7 @@
             </div>
             <div class="svc-back">
               <p>We deploy 3,000+ creators to shoot high-performing, raw, ad-ready video creatives styled with psychological visual hooks.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -845,7 +938,7 @@
             </div>
             <div class="svc-back">
               <p>We design and build fast, responsive, conversion-optimized landing pages and Shopify stores that turn traffic into customers.</p>
-              <a href="#contact" class="svc-link">Let's talk →</a>
+              <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="svc-link">Let's talk →</a>
             </div>
           </div>
         </div>
@@ -857,49 +950,122 @@
        TESTIMONIALS
   ====================================================== -->
   <section class="testimonials-section" id="testimonials">
-    <div class="section-inner">
+    <!-- Testimonials Background Orbit (Matches Collaboration Style) -->
+    <div class="testi-orbit-wrap" aria-hidden="true">
+      <div class="circles-container" style="transform: scale(1.3);">
+        <div class="circles-core" style="opacity: 0;"></div>
+
+        <!-- Inner Circle -->
+        <div class="inner-circle-orbit">
+          <div class="orbit-line-inner" style="border: 1px dashed var(--border-accent);"></div>
+          <div class="inner-rotate-container">
+            <div class="orbit-item" style="--angle: 45deg; --radius: var(--inner-radius);">
+              <div class="item-content inner-content">
+                <div class="brand-avatar-circle" style="background:var(--bg-card); border-radius:50%; padding:10px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                  <img src="assets/Brand logos/Equal AI.webp" alt="Equal AI" style="width:100%; height:auto; object-fit:contain;">
+                </div>
+              </div>
+            </div>
+            <div class="orbit-item" style="--angle: 225deg; --radius: var(--inner-radius);">
+              <div class="item-content inner-content">
+                <div class="brand-avatar-circle" style="background:var(--bg-card); border-radius:50%; padding:10px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                  <img src="assets/Brand logos/Paytm.webp" alt="Paytm" style="width:100%; height:auto; object-fit:contain;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outer Circle -->
+        <div class="outer-circle-orbit">
+          <div class="orbit-line-outer" style="border: 1px dashed var(--border-accent);"></div>
+          <div class="outer-rotate-container">
+            <div class="orbit-item" style="--angle: 135deg; --radius: var(--outer-radius);">
+              <div class="item-content outer-content">
+                <div class="brand-avatar-circle" style="background:var(--bg-card); border-radius:50%; padding:10px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                  <img src="assets/Brand logos/Sri Mandir.webp" alt="Sri Mandir" style="width:100%; height:auto; object-fit:contain;">
+                </div>
+              </div>
+            </div>
+            <div class="orbit-item" style="--angle: 315deg; --radius: var(--outer-radius);">
+              <div class="item-content outer-content">
+                <div class="brand-avatar-circle" style="background:var(--bg-card); border-radius:50%; padding:10px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                  <img src="assets/Brand logos/Startt.webp" alt="Startt" style="width:100%; height:auto; object-fit:contain;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left Aligned Headings (Standard Style) -->
+    <div class="section-inner" style="position:relative; z-index:2;">
       <div class="section-head reveal">
-        <span class="section-tag">03 TESTIMONIALS</span>
-        <h2 class="section-h2">What Brands<br>Say About Us</h2>
+        <span class="section-tag">04 TESTIMONIALS</span>
+        <h2 class="section-h2">Their Success,<br><span style="font-style: italic;">Their Words.</span></h2>
       </div>
+    </div>
 
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Working with this agency was a turning point for our brand. Their UGC campaigns delivered a 3x increase in engagement within the first month. The creators truly understood our aesthetic."</p>
-          <div class="testi-author">
-            <div class="testi-avatar av-green">SK</div>
-            <div class="testi-info">
-              <span class="testi-name">Sneha Kapoor</span>
-              <span class="testi-role">Founder, OZiva</span>
+    <!-- Marquee Track -->
+    <div class="testi-track-wrap reveal" style="position:relative; z-index:2; margin-top: 100px; padding-bottom: 60px; overflow: hidden;">
+      <div class="testi-marquee-track">
+        <div class="testi-inner">
+          <!-- 6 Testimonials -->
+          
+          <div class="testi-card testi-purple" style="margin-top: 60px;">
+            <p class="testi-quote">Our experience on working with Social Up Marketing for Sufiyana Events, has been fantastic. From start to finish, their service has been reliable, creative, and extremely professional. The content they produce is of the highest quality.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Equal AI.webp" alt="Equal AI" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Equal AI</span>
             </div>
           </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Their short-form reels went viral with our exact target audience. Our organic reach grew by 310% in 6 weeks. Absolute professionals who understand D2C deeply."</p>
-          <div class="testi-author">
-            <div class="testi-avatar av-orange">AR</div>
-            <div class="testi-info">
-              <span class="testi-name">Arjun Reddy</span>
-              <span class="testi-role">Marketing Head, Too Yumm!</span>
+          
+          <div class="testi-card testi-green">
+            <p class="testi-quote">One of best social media marketing agencies out there, they know what they are doing. Always coming up with new strategies and executing them with perfection.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Paytm.webp" alt="Paytm" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Paytm</span>
             </div>
           </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Our Instagram transformed from a basic product feed to a luxury lookbook in 60 days. The aesthetic shift showed directly in our ROAS climbing to 5.4x. Highly recommended."</p>
-          <div class="testi-author">
-            <div class="testi-avatar av-purple">PM</div>
-            <div class="testi-info">
-              <span class="testi-name">Priya Mehta</span>
-              <span class="testi-role">CMO, GIVA Jewellery</span>
+          
+          <div class="testi-card testi-purple" style="margin-top: 60px;">
+            <p class="testi-quote">Social Up marketing has been phenomenal for my Saadam business, they are so young in thoughts and very prompt in their work. I am very happy with their performance and their work ethic. Gratitude to the entire team.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Sri Mandir.webp" alt="Sri Mandir" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Sri Mandir</span>
             </div>
           </div>
+          
+          <div class="testi-card testi-green">
+            <p class="testi-quote">SUP is definitely amazing people to work with tried their UGC plan all works perfectly fine for us.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Startt.webp" alt="Startt" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Startt</span>
+            </div>
+          </div>
+          
+          <div class="testi-card testi-purple" style="margin-top: 60px;">
+            <p class="testi-quote">Their short-form reels went viral with our exact target audience. Our organic reach grew by 310% in 6 weeks. Absolute professionals who understand D2C deeply.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Equal AI.webp" alt="Equal AI" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Equal AI</span>
+            </div>
+          </div>
+          
+          <div class="testi-card testi-green">
+            <p class="testi-quote">Our Instagram transformed from a basic product feed to a luxury lookbook in 60 days. The aesthetic shift showed directly in our ROAS climbing to 5.4x. Highly recommended.</p>
+            <div class="testi-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+              <img src="assets/Brand logos/Paytm.webp" alt="Paytm" style="width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 6px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <span class="testi-name" style="font-weight: 600; font-size: 0.95rem;">Paytm</span>
+            </div>
+          </div>
+
         </div>
       </div>
+      <!-- Fade edges -->
+      <div class="reels-fade reels-fade-left"></div>
+      <div class="reels-fade reels-fade-right"></div>
     </div>
   </section>
 
@@ -1476,115 +1642,10 @@
 
         <!-- Right Form -->
         <div class="contact-form-wrap reveal">
-
-          <!-- Pillar Selection -->
-          <div class="form-section-header">
-            <h3 class="form-title">Select Service Pillars</h3>
-            <span class="pillar-hint">Choose one or more</span>
-          </div>
-          <div class="pillars-row" id="pillarsRow">
-            <button class="pillar-btn" data-svc="Content Shoot" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Content Shoot
-            </button>
-            <button class="pillar-btn" data-svc="Product Shoot" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Product Shoot
-            </button>
-            <button class="pillar-btn" data-svc="Video Editing" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Video Editing
-            </button>
-            <button class="pillar-btn" data-svc="Social Media Management" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Social Media Management
-            </button>
-            <button class="pillar-btn" data-svc="Short Form UGC" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Short Form UGC
-            </button>
-            <button class="pillar-btn" data-svc="Website Development" type="button">
-              <span class="pillar-check">
-                <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>
-              </span>
-              Website Development
-            </button>
-          </div>
-
-          <div class="form-divider"></div>
-
-          <form id="contactForm" class="contact-form" novalidate>
-            <input type="hidden" id="selectedServices" name="services">
-
-            <!-- Row: Name + Email -->
-            <div class="field-row">
-              <div class="field-group">
-                <span class="field-icon">
-                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                <input type="text" id="fname" name="name" required placeholder=" " class="field-input has-icon">
-                <label for="fname" class="field-label">Your Name *</label>
-              </div>
-              <div class="field-group">
-                <span class="field-icon">
-                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-                </span>
-                <input type="email" id="femail" name="email" required placeholder=" " class="field-input has-icon">
-                <label for="femail" class="field-label">Email Address *</label>
-              </div>
-            </div>
-
-            <!-- Phone (full width) -->
-            <div class="field-group">
-              <span class="field-icon">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.35 5.35l1.06-1.06a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21 15z"/></svg>
-              </span>
-              <input type="tel" id="fphone" name="phone" required placeholder=" " class="field-input has-icon">
-              <label for="fphone" class="field-label">WhatsApp Number *</label>
-            </div>
-
-            <!-- Website -->
-            <div class="field-group">
-              <span class="field-icon">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </span>
-              <input type="url" id="fwebsite" name="website" placeholder=" " class="field-input has-icon">
-              <label for="fwebsite" class="field-label">Website / Social Link</label>
-            </div>
-
-            <!-- Details textarea -->
-            <div class="field-group">
-              <textarea id="fdetails" name="details" placeholder=" " class="field-input field-textarea" rows="3"></textarea>
-              <label for="fdetails" class="field-label">Tell us about your brand &amp; goals</label>
-            </div>
-
-            <button type="submit" class="btn-submit" id="submitBtn">
-              <span>Send My Brief</span>
-              <svg class="submit-arrow" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </form>
-
-          <!-- Success State -->
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="success-body">
-              <h4>Brief Received! 🎉</h4>
-              <p>We'll reach out within <strong>24 hours</strong> to align on your growth strategy. Check your email for a confirmation.</p>
-            </div>
-            <button class="btn-ghost-sm" id="resetForm">Submit Another Brief</button>
-          </div>
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/ranjittmishra21?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
         </div>
       </div>
     </div>
@@ -1595,7 +1656,6 @@
   ====================================================== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-giant">MOTION</div>
 
       <div class="footer-row">
         <div class="footer-col">
@@ -1619,7 +1679,7 @@
           <a href="#services" class="footer-link">Services</a>
           <a href="#partners" class="footer-link">Collaborations</a>
           <a href="#showcase" class="footer-link">Works</a>
-          <a href="#contact" class="footer-link">Contact</a>
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="footer-link">Contact</a>
         </div>
 
         <div class="footer-col">
@@ -1636,7 +1696,7 @@
           <span class="footer-col-title">Contact</span>
           <a href="mailto:support@motionlabswork.com" class="footer-link">support@motionlabswork.com</a>
           <a href="https://wa.me/918178061034" target="_blank" class="footer-link">+91 8178061034</a>
-          <a href="#contact" class="footer-link footer-cta-link">Book a Call →</a>
+          <a href="#contact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ranjittmishra21'});return false;" class="footer-link footer-cta-link">Book a Call →</a>
         </div>
       </div>
 

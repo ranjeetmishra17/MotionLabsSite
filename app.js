@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initCounters();
   initFaq();
-  initContactForm();
   initProgressBar();
   initHeroVideoControls();
   initReels();
+  initTestimonials();
   initServiceCardTouch();
   initVideoModal();
   initOrbitCards();
@@ -185,70 +185,6 @@ function initFaq() {
 /* ──────────────────────────────────────────────────────────
    7. CONTACT FORM
 ────────────────────────────────────────────────────────── */
-function initContactForm() {
-  const pillarsRow  = document.getElementById('pillarsRow');
-  const hiddenSvc   = document.getElementById('selectedServices');
-  const formWrap    = pillarsRow && pillarsRow.closest('.contact-form-wrap');
-  const sectionHdr  = formWrap && formWrap.querySelector('.form-section-header');
-  const formDivider = formWrap && formWrap.querySelector('.form-divider');
-  const selected    = new Set();
-
-  /* Pillar toggle buttons */
-  if (pillarsRow) {
-    pillarsRow.querySelectorAll('.pillar-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const svc = btn.dataset.svc;
-        if (selected.has(svc)) { selected.delete(svc); btn.classList.remove('selected'); }
-        else                   { selected.add(svc);    btn.classList.add('selected'); }
-        if (hiddenSvc) hiddenSvc.value = [...selected].join(', ');
-      });
-    });
-  }
-
-  /* Form submission */
-  const form     = document.getElementById('contactForm');
-  const success  = document.getElementById('formSuccess');
-  const resetBtn = document.getElementById('resetForm');
-
-  if (!form) return;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    let valid = true;
-    form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) {
-        valid = false;
-        field.style.borderColor = '#ff4444';
-        field.style.boxShadow   = '0 0 0 3px rgba(255,68,68,0.14)';
-        field.classList.add('field-shake');
-        field.addEventListener('animationend', () => field.classList.remove('field-shake'), { once: true });
-        field.addEventListener('input', () => { field.style.borderColor = ''; field.style.boxShadow = ''; }, { once: true });
-      }
-    });
-    if (!valid) return;
-
-    /* Show success */
-    form.style.display = 'none';
-    if (pillarsRow)   pillarsRow.style.display  = 'none';
-    if (sectionHdr)   sectionHdr.style.display  = 'none';
-    if (formDivider)  formDivider.style.display  = 'none';
-    if (success) success.classList.add('visible');
-  });
-
-  if (resetBtn && form && success) {
-    resetBtn.addEventListener('click', () => {
-      form.reset();
-      form.style.display = '';
-      success.classList.remove('visible');
-      if (pillarsRow)   { pillarsRow.style.display = ''; pillarsRow.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('selected')); }
-      if (sectionHdr)   sectionHdr.style.display  = '';
-      if (formDivider)  formDivider.style.display  = '';
-      selected.clear();
-    });
-  }
-}
-
 /* ──────────────────────────────────────────────────────────
    8. SCROLL PROGRESS BAR
 ────────────────────────────────────────────────────────── */
@@ -468,9 +404,11 @@ function initReels() {
   if (!wrap || !track || !inner) return;
 
   /* Clone the original card set and append for seamless loop */
-  const clone = inner.cloneNode(true);
-  clone.setAttribute('aria-hidden', 'true');
-  track.appendChild(clone);
+  for(let i=0; i<4; i++){
+    const clone = inner.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
 
   /* Hover play / pause for all frames (original + cloned) */
   track.querySelectorAll('.reel-frame').forEach(frame => {
@@ -484,14 +422,14 @@ function initReels() {
       const player = typeof Vimeo !== 'undefined' ? new Vimeo.Player(iframe) : null;
       if (player) {
         iframe.vimeoPlayer = player;
-        player.pause().catch(() => {});
+        // player.pause().catch(() => {}); /* Removed for autoplay */
 
         frame.addEventListener('mouseenter', () => {
           player.play().catch(err => console.log('Vimeo play error:', err));
         });
 
         frame.addEventListener('mouseleave', () => {
-          player.pause().catch(() => {});
+          // player.pause().catch(() => {}); /* Removed for autoplay */
         });
 
         /* Click: open fullscreen modal preview */
@@ -629,3 +567,17 @@ function initOrbitCards() {
     });
   });
 }
+
+function initTestimonials() {
+  const track = document.querySelector('.testi-marquee-track');
+  const inner = document.querySelector('.testi-inner');
+  if (!track || !inner) return;
+
+  for(let i=0; i<3; i++){
+    const clone = inner.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
+}
+
+

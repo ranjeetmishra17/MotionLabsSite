@@ -25,8 +25,16 @@
 
 /* ─── RESET ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  scroll-behavior: smooth; font-size: 16px; }
 body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   background-color: var(--bg);
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
@@ -1348,14 +1356,14 @@ ul { list-style: none; }
 }
 @media (max-width: 991px) {
   .circles-container {
-    width: 408px;
-    height: 408px;
+    width: 500px;
+    height: 500px;
   }
 }
 @media (max-width: 480px) {
   .circles-container {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 }
 
@@ -1726,22 +1734,21 @@ ul { list-style: none; }
 }
 
 /* Pause marquee on hover */
-.reels-track-wrap:hover .reels-marquee-track {
+.reels-track-wrap:hover .reels-inner {
   animation-play-state: paused;
 }
 
-/* Moving belt — contains original + cloned copy side-by-side */
+/* Moving belt - contains original + cloned copy side-by-side */
 .reels-marquee-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: reelMarquee 40s linear infinite;
   align-items: flex-start;
 }
 
 @keyframes reelMarquee {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 10px)); }
+  100% { transform: translateX(calc(-100% - 20px)); }
 }
 
 /* Inner belt (original cards + cloned copy) */
@@ -1749,6 +1756,7 @@ ul { list-style: none; }
   display: flex;
   gap: 20px;
   flex-shrink: 0;
+  animation: reelMarquee 40s linear infinite;
 }
 
 /* ── Fade edges ───────────────────────────────────────────── */
@@ -2014,67 +2022,92 @@ ul { list-style: none; }
    TESTIMONIALS
 ============================================================ */
 .testimonials-section {
-  padding: 100px 0;
+  padding: 60px 0 100px 0;
   border-top: 1px solid var(--border);
-  background: var(--bg-2);
+  background: var(--bg);
+  color: var(--gray-1);
   position: relative;
   z-index: 1;
 }
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.testimonials-section .section-h2 {
+  color: var(--accent);
 }
+
+.testi-track-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+  background: var(--bg);
+  z-index: 10;
+  margin-top: 40px !important;
+}
+.testi-track-wrap:hover .testi-inner {
+  animation-play-state: paused;
+}
+.testi-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  align-items: flex-start;
+}
+.testi-inner {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  animation: reelMarquee 45s linear infinite;
+}
+
 .testi-card {
-  padding: 36px;
+  width: 320px;
+  flex: 0 0 320px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  transition: border-color 0.3s, transform 0.3s;
-}
-.testi-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-4px);
-}
-.testi-stars { color: var(--accent); font-size: 1rem; letter-spacing: 2px; }
-.testi-quote {
-  font-size: 0.9rem;
   color: var(--gray-1);
-  line-height: 1.8;
-  font-style: italic;
-  flex: 1;
 }
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+.testi-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 180px;
+  line-height: 1;
+  font-family: Georgia, serif;
+  opacity: 0.15;
+  color: var(--accent-dim);
 }
-.testi-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.8rem;
-  flex-shrink: 0;
+.testi-purple {
+  background: var(--bg-card);
 }
-.av-green { background: linear-gradient(135deg, #C7FF42, #8bc34a); color: #050505; }
-.av-orange { background: linear-gradient(135deg, #FF6B35, #ff8c55); color: #fff; }
-.av-purple { background: linear-gradient(135deg, #845EC2, #d4a5ff); color: #fff; }
-.testi-info { display: flex; flex-direction: column; gap: 3px; }
-.testi-name { font-size: 0.85rem; font-weight: 700; color: var(--white); }
-.testi-role { font-size: 0.75rem; color: var(--gray-3); }
+.testi-green {
+  background: var(--bg-card);
+}
+/* Alternate card border slightly for visual interest */
+.testi-green {
+  border-color: var(--border-accent);
+}
+.testi-quote {
+  position: relative;
+  z-index: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-/* ============================================================
-   ABOUT / PROCESS
-============================================================ */
+/* Background Circles Wrapper */
+.testi-orbit-wrap {
+  position: absolute;
+  top: -50px; /* take circle slightly up */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
 .about-section {
   padding: 100px 0;
   border-top: 1px solid var(--border);
@@ -2932,268 +2965,63 @@ a.cd-value:hover { color: var(--accent); }
   .faq-grid { grid-template-columns: 280px 1fr; gap: 60px; }
   .stats-row { grid-template-columns: repeat(5, 1fr); }
   .section-inner { padding: 0 24px; }
-  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-track-wrap:hover .testi-inner {
+  animation-play-state: paused;
 }
-
-/* ── 900px: Tablets ────────────────────────────────────── */
-@media (max-width: 900px) {
-  :root { --nav-h: 72px; }
-
-  /* Navbar */
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .nav-logo-img { height: 80px; }
-  .nav-inner { height: var(--nav-h); padding: 0 20px; align-items: center; }
-  .nav-header { left: 12px; right: 12px; }
-
-  /* Hero */
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    padding: 20px 20px 60px;
-    gap: 24px;
-  }
-  .hero-center {
-    display: contents;
-  }
-  .experts-row {
-    grid-column: 1 / -1;
-    order: 1;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-headline {
-    grid-column: 1 / -1;
-    order: 2;
-    font-size: clamp(2rem, 8vw, 3.2rem);
-  }
-  .hero-sub {
-    grid-column: 1 / -1;
-    order: 3;
-    margin: 0 auto 24px;
-    max-width: 100%;
-  }
-  .hero-cards-left, .hero-cards-right {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    order: 4;
-  }
-  .hero-cards-left {
-    grid-column: 1;
-  }
-  .hero-cards-right {
-    grid-column: 2;
-    align-items: center;
-  }
-  .video-aspect { width: 90px; }
-  .square-aspect { width: 100px; }
-  .headline-row-avatars { justify-content: center; }
-  .hero-btns { justify-content: center; }
-
-  /* Myths & stats */
-  .myths-grid { grid-template-columns: 1fr; gap: 40px; }
-  .myths-label-col { position: static; }
-  .stats-row { grid-template-columns: repeat(2, 1fr); }
-  .stat-block:nth-child(5) { grid-column: 1 / -1; border-right: none; }
-
-  /* Services */
-  .services-grid { flex-wrap: wrap; }
-  .svc-card {
-    height: 240px;
-    flex: 0 0 calc(50% - 10px);
-    min-width: 240px;
-  }
-
-  /* Testimonials */
-  .testi-grid { grid-template-columns: 1fr; }
-
-  /* About */
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-left { position: static; }
-
-  /* FAQ */
-  .faq-grid { grid-template-columns: 1fr; gap: 40px; }
-  .faq-left { position: static; }
-
-  /* Contact */
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-form-wrap { padding: 28px 24px; }
-
-  /* Footer */
-  .footer-row { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .footer-giant { font-size: clamp(4rem, 14vw, 8rem); margin-bottom: 48px; }
-  .footer-inner { padding: 60px 24px 32px; }
+.testi-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  align-items: flex-start;
 }
-
-/* ── 768px: Small tablets / large phones landscape ─────── */
-@media (max-width: 768px) {
-  :root { --nav-h: 80px; }
-
-  /* Navbar */
-  .nav-logo-img { height: 120px; }
-  .nav-inner { height: var(--nav-h); align-items: center; padding: 0 16px; }
-  .nav-header { left: 8px; right: 8px; }
-
-  /* Hero — display side-by-side videos below subtitle on mobile */
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 24px 20px 48px;
-    gap: 16px;
-  }
-  .hero-center {
-    display: contents;
-  }
-  .experts-row {
-    grid-column: 1 / -1;
-    order: 1;
-    margin-top: 24px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-headline {
-    grid-column: 1 / -1;
-    order: 2;
-    font-size: clamp(1.8rem, 9vw, 2.8rem);
-    margin-bottom: 12px;
-  }
-  .hero-sub {
-    grid-column: 1 / -1;
-    order: 3;
-    font-size: 0.9rem;
-    margin-bottom: 16px;
-    max-width: 100%;
-  }
-  .hero-cards-left, .hero-cards-right {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    grid-column: 1;
-    order: 4;
-    width: 100%;
-    gap: 0;
-  }
-  .hero-cards-left {
-    justify-content: flex-end;
-  }
-  .hero-cards-right {
-    grid-column: 2;
-    justify-content: flex-start;
-  }
-  .pcard-row {
-    display: none !important;
-  }
-  .video-aspect {
-    width: clamp(100px, 35vw, 140px);
-  }
-  .hero-cta-group {
-    grid-column: 1 / -1;
-    order: 5;
-    justify-content: center;
-    margin-top: 16px;
-    margin-bottom: 12px;
-  }
-  .scroll-hint {
-    grid-column: 1 / -1;
-    order: 6;
-  }
-  .hero-btns { gap: 12px; flex-wrap: wrap; }
-  .iavatar { width: 34px; height: 34px; }
-
-  /* Myths */
-  .myths-section { padding: 72px 0; }
-  .myths-big-heading { font-size: clamp(2.2rem, 8vw, 3.5rem); }
-  .stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: var(--radius);
-  }
-  .stat-block { padding: 24px 16px; }
-  .stat-block:nth-child(5) { grid-column: 1 / -1; border-right: none; }
-
-  /* Partners circle */
-  .partners-grid { gap: 48px; }
-  .partners-info .section-sub { display: none; }
-  .circles-container {
-    transform-origin: center center;
-  }
-
-  /* Services */
-  .services-section { padding: 72px 0; }
-  .services-grid { gap: 16px; }
-  .svc-card {
-    height: 220px;
-    flex: 0 0 100%;
-    min-width: unset;
-  }
-
-  /* Testimonials */
-  .testimonials-section { padding: 72px 0; }
-  .testi-grid { grid-template-columns: 1fr; gap: 16px; }
-
-  /* About & Contact */
-  .about-section, .contact-section { padding: 72px 0; }
-  .video-showcase-section { padding: 72px 0 16px; }
-  .faq-section { padding: 72px 0; }
-
-  /* Contact form */
-  .contact-form-wrap { padding: 24px 20px; }
-
-  /* Footer */
-  .footer-row { grid-template-columns: 1fr; gap: 28px; }
-  .footer-about { max-width: 100%; }
-  .footer-giant { font-size: clamp(3rem, 18vw, 6rem); margin-bottom: 40px; }
-  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-  .footer-inner { padding: 48px 20px 28px; }
-
-  /* Global Footprint */
-  .footprint-section { padding: 72px 0; }
-  .map-canvas-container { padding: 24px 16px; }
+.testi-inner {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  animation: reelMarquee 45s linear infinite;
 }
+/* Semicircle background */
+.testi-circle-bg {
+  position: absolute;
+  top: 100px; /* Aligned roughly with head */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 500px;
+  /* Mask bottom half so it's a semicircle */
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+.testi-circle-inner {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Rotate everything continuously */
+  animation: spin 30s linear infinite;
+}
+.testi-circle-logo {
+  position: absolute;
+  width: 80px;
+  animation: spin 30s linear infinite reverse; /* Keep logo upright */
+}
+.testi-orbit-line {
+  position: absolute;
+  border: 1px dashed rgba(199, 255, 66, 0.2);
+  border-radius: 50%;
+}
+.testi-orbit-line.line-1 { width: 400px; height: 400px; }
+.testi-orbit-line.line-2 { width: 700px; height: 700px; border-style: dotted; }
+.testi-orbit-line.line-3 { width: 1000px; height: 1000px; }
 
-/* ── 600px: Large phones portrait ──────────────────────── */
-@media (max-width: 600px) {
-  :root { --nav-h: 60px; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
 
-  /* Layout */
-  .section-inner { padding: 0 16px; }
-  .section-head { margin-bottom: 40px; }
-
-  /* Navbar */
-  .nav-logo-img { height: 100px; }
-  .nav-inner { height: var(--nav-h); padding: 0 16px; }
-  .nav-header { left: 0; right: 0; border-radius: 0; border-left: none; border-right: none; }
-
-  /* Hero */
-  .hero { padding-top: var(--nav-h); }
-  .hero-inner { padding: 20px 16px 48px; }
-  .hero-headline { font-size: clamp(1.9rem, 11vw, 2.8rem); letter-spacing: -0.03em; }
-  .hero-sub { font-size: 0.9rem; line-height: 1.7; }
-  .btn-primary, .btn-ghost { font-size: 0.85rem; padding: 12px 22px; }
-  .experts-row { padding: 8px 14px; gap: 8px; }
-  .experts-label { font-size: 0.7rem; }
-  .expert-logo { height: 16px; }
-
-  /* Myths */
-  .myths-section { padding: 60px 0; }
-  .myths-big-heading { font-size: clamp(2rem, 12vw, 3rem); }
-  .myths-intro { font-size: 0.95rem; }
-  .stat-block { padding: 20px 14px; }
-  .stat-num { font-size: clamp(1.5rem, 5vw, 2rem); }
-
-  /* Services */
-  .services-section { padding: 60px 0; }
-  .svc-card { height: 200px; }
-
-  /* Testimonials */
-  .testi-card { padding: 24px; }
+.testi-card { padding: 24px; }
   .testi-quote { font-size: 0.875rem; }
 
   /* About */
@@ -3374,6 +3202,11 @@ a.cd-value:hover { color: var(--accent); }
 
 /* Tinder Bios Mockup Card Styles */
 .tinder-card-mock {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   background-color: #072D24 !important;
   display: flex;
   align-items: center;
@@ -3449,6 +3282,9 @@ a.cd-value:hover { color: var(--accent); }
     0 0 0 1px rgba(255,255,255,0.08),
     0 40px 80px rgba(0,0,0,0.6),
     0 0 60px rgba(199,255,66,0.06);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--gray-1);
 }
 .vmodal-iframe {
   position: absolute;
@@ -3501,4 +3337,86 @@ a.cd-value:hover { color: var(--accent); }
 }
 .reel-card:hover .reel-overlay {
   opacity: 1 !important;
+}
+
+
+/* --- GLOBAL RESPONSIVE GRID FIXES --- */
+@media (max-width: 991px) {
+  /* At 991px, some grids get a bit too squeezed. We'll reduce gaps. */
+  .about-grid, .faq-grid, .contact-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* At 768px (tablets in portrait and smaller), collapse side-by-side grids into a single column */
+  .about-grid, .faq-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  /* Ensure the left column (usually a sticky sidebar) resets its position */
+  .about-left, .faq-left, .contact-left {
+    position: relative;
+    top: 0;
+  }
+}
+
+
+
+
+
+
+
+
+/* --- TARGETED RESPONSIVE FIXES (MYTHS, COLLAB, CALENDLY) --- */
+
+@media (max-width: 991px) {
+  /* Fix We Bet (Myths) Grid */
+  .myths-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Specific Mobile Fixes requested by user (Calendly height, Collab) */
+@media (max-width: 991px) {
+  
+  /* --- COLLABORATION SECTION --- */
+  .partners-info {
+    text-align: center !important;
+    align-items: center !important;
+    width: 100%;
+  }
+  .partners-info .section-sub {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .partners-metrics {
+    justify-content: center !important;
+    flex-wrap: wrap; 
+    gap: 20px !important;
+    width: 100%;
+  }
+  /* Full width button on mobile */
+  .partners-info .btn-primary {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+  }
+  
+  .circles-container {
+    width: min(400px, 95vw) !important;
+    height: min(400px, 95vw) !important;
+    transform: scale(0.95);
+  }
+}
+
+/* Make Calendly widget shorter on mobile */
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
 }
